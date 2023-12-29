@@ -1,7 +1,8 @@
+import Header from '@/components/layouts/header'
 import StarBackground from '@/components/layouts/stars-background'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={inter.className}>
         <StarBackground />
+        <Header />
         {children}
       </body>
     </html>
