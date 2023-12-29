@@ -1,6 +1,6 @@
 const Stars = () => (
   <>
-    {Array.from({ length: 29 }).map((_, index) => (
+    {Array.from({ length: 15 }).map((_, index) => (
       <div className="star" key={`star_${index}`} />
     ))}
   </>
@@ -8,7 +8,7 @@ const Stars = () => (
 
 function StarsBackground() {
   return (
-    <div className="stars">
+    <div className="stars -z-10">
       <Stars />
     </div>
   )
