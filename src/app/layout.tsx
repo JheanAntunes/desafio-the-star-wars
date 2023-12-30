@@ -1,10 +1,8 @@
+import { fontSans, inter } from '@/components/assets/fonts'
 import Header from '@/components/layouts/header'
 import StarBackground from '@/components/layouts/stars-background'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import '../styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
-      <body className={inter.className}>
+    <html lang="pt-br" className={`${fontSans.variable}`}>
+      <body className={`${inter.className} antialiased`}>
         <StarBackground />
         <Header />
         {children}
