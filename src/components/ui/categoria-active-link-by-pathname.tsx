@@ -25,7 +25,7 @@ export default function CategoriaActiveLink({
             className={cn(
               'font-sans text-lg capitalize',
               activeLink(href)
-                ? 'border border-b-[3px] border-b-blue-500 pb-1'
+                ? 'hoverLink after:w-full hover:after:w-0'
                 : 'hoverLink'
             )}
           >
