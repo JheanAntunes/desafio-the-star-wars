@@ -71,12 +71,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground overflow-hidden min-h-screen;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer utilities {
   
+  .body {
+    @apply overflow-hidden
+  }
+
   .hoverLink {
     @apply relative
   }

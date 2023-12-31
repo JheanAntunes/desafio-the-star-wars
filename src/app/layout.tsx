@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`${fontSans.variable}`}>
       <body className={`${inter.className} antialiased`}>
-        <StarBackground />
+        <div className="body">
+          <StarBackground />
+        </div>
         <Header />
         {children}
       </body>
