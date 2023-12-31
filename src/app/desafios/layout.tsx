@@ -1,4 +1,4 @@
-import CategoriaDesafios from '@/components/segmentos/desafios/components/categoria-desafios'
+import CategoriaDesafios from '@/components/layouts/desafio/categoria-desafios'
 import { TypographyH1 } from '@/components/ui/typography'
 
 function LayoutDesafios({ children }: React.PropsWithChildren) {

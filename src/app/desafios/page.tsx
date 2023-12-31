@@ -1,4 +1,4 @@
-import SectionDesafioPerson from '@/components/segmentos/desafios/components/section-desafio-person'
+import SectionDesafioPerson from '@/components/segmentos/desafios/components/section/section-person/section-desafio-person'
 
 function PageDesafio() {
   return (
