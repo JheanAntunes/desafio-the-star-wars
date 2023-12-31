@@ -1,7 +1,7 @@
 import { TypePerson } from '@/types/Typesfetch'
 
 export const modifying_property_improve_UI = (caracteristica: string) => {
-  switch (caracteristica) {
+  switch (caracteristica.toLowerCase()) {
     case 'unknown':
       return 'Desconhecido'
       break
