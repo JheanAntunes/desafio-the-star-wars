@@ -5,10 +5,14 @@ import SectionPlanetDesafioCarousel from './section-planet-desafio-carousel'
 async function SectionPlanet() {
   const { data_improved_UI } = await LogicSectionPlanet()
   return (
-    <section className="container">
-      <TypographyH2>Planetas</TypographyH2>
-      <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
-      <SectionPlanetDesafioCarousel data_Improved_UI={data_improved_UI} />
+    <section className="container flex flex-col gap-5">
+      <div>
+        <TypographyH2>Planetas</TypographyH2>
+        <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
+      </div>
+      <div className="flex items-center justify-center">
+        <SectionPlanetDesafioCarousel data_Improved_UI={data_improved_UI} />
+      </div>
     </section>
   )
 }
