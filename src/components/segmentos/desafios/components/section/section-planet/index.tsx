@@ -2,7 +2,7 @@ import { TypographyH2, TypographyP } from '@/components/ui/typography'
 import { LogicSectionPlanet } from './logic-section-planet'
 import SectionPlanetDesafioCarousel from './section-planet-desafio-carousel'
 
-async function SectionPlanet() {
+async function SectionDesafioPlanet() {
   const { data_improved_UI } = await LogicSectionPlanet()
   return (
     <section className="container flex flex-col gap-5">
@@ -17,4 +17,4 @@ async function SectionPlanet() {
   )
 }
 
-export default SectionPlanet
+export default SectionDesafioPlanet
