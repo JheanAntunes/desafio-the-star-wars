@@ -1,5 +1,5 @@
-import SectionDesafioPerson from '@/components/segmentos/desafios/components/section/section-person/section-desafio-person'
-import SectionDesafioPlanet from '@/components/segmentos/desafios/components/section/section-planet'
+import SectionDesafioPerson from '@/components/segmentos/desafios/components/section-person/section-desafio-person'
+import SectionDesafioPlanet from '@/components/segmentos/desafios/components/section-planet'
 
 function PageDesafio() {
   return (
