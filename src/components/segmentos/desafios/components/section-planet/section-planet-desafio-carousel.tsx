@@ -8,6 +8,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel'
 import { TypographyList } from '@/components/ui/typography'
+import { formatedNumber } from '@/utils/formatedNumber'
 import { TypeModifyingPlanet } from '@/utils/modiying_data_improve_ui'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,12 +21,6 @@ type TypeSectionDesafioPersonCarouselProps = {
 function SectionPlanetDesafioCarousel({
   data_Improved_UI
 }: TypeSectionDesafioPersonCarouselProps) {
-  const formatedNumber = (valorCaracteristica: string) => {
-    return Number.isNaN(Number(valorCaracteristica))
-      ? valorCaracteristica
-      : new Intl.NumberFormat('pt-BR').format(Number(valorCaracteristica))
-  }
-
   return (
     <Carousel
       opts={{
