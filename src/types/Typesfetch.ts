@@ -8,20 +8,13 @@ export type TypePerson = {
   birth_year: string
   gender: string
   homeworld: string
-  films: string[] | never[]
-  species: string[] | never[]
-  vehicles: string[] | never[]
-  starships: string[] | never[]
+  films: string[] | null[]
+  species: string[] | null[]
+  vehicles: string[] | null[]
+  starships: string[] | null[]
   created: string
   edited: string
   url: string
-}
-
-export type TypeFetchPerson = {
-  count: number
-  next: string
-  previous: string | null
-  results: TypePerson[]
 }
 
 export type TypePlanet = {
@@ -34,18 +27,11 @@ export type TypePlanet = {
   terrain: string
   surface_water: string
   population: string
-  residents: string[]
-  films: string[]
+  residents: string[] | null
+  films: string[] | null
   created: string
   edited: string
   url: string
-}
-
-export type TypeFetchPlanet = {
-  count: number
-  next: string
-  previous: string | null
-  results: TypePlanet[]
 }
 
 export type TypeFilms = {
@@ -55,19 +41,40 @@ export type TypeFilms = {
   director: string
   producer: string
   release_date: string
-  characters: string[]
-  planets: string[]
-  starships: string[]
-  vehicles: string[]
-  species: string[]
+  characters: string[] | null
+  planets: string[] | null
+  starships: string[] | null
+  vehicles: string[] | null
+  species: string[] | null
   created: string
   edited: string
   url: string
 }
 
-export type TypeFetchFilms = {
+export type TypeStarships = {
+  MGLT: string
+  cargo_capacity: string
+  consumables: string
+  cost_in_credits: string
+  created: string
+  crew: string
+  edited: string
+  hyperdrive_rating: string
+  length: string
+  manufacturer: string
+  max_atmosphering_speed: string
+  model: string
+  name: string
+  passengers: string
+  films: string[] | null
+  pilots: never[] | null
+  starship_class: string
+  url: string
+}
+
+export type TypeFetch<TypeResults> = {
   count: number
-  next: null
-  previous: null
-  results: TypeFilms[]
+  next: null | string
+  previous: null | string
+  results: TypeResults[]
 }
