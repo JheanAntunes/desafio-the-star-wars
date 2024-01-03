@@ -13,6 +13,10 @@ export const dataLinksDesafios: TypeDataLinks[] = [
     content: 'Planetas'
   },
   {
+    href: '/desafios/films',
+    content: 'Filmes'
+  },
+  {
     href: '/desafios/starships',
     content: 'Nave Estelares'
   },
