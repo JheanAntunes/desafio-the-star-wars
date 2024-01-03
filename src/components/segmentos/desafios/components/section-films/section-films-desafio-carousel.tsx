@@ -65,13 +65,22 @@ function SectionFilmsDesafioCarousel({
                           produtor(es)
                         </TypographySmall>
                         <TypographyList className="my-2">
-                          {producer.split(' ').map((produtorNome) => (
-                            <TypographyListItem key={produtorNome}>
-                              <TypographySmall className="text-zinc-900">
-                                {produtorNome}
-                              </TypographySmall>
-                            </TypographyListItem>
-                          ))}
+                          {producer.split(' ').map((produtorNome, index) => {
+                            // Show two name producers in card
+                            if (index > 1) return null
+                            return (
+                              <TypographyListItem key={produtorNome}>
+                                <TypographySmall className="text-zinc-900">
+                                  {produtorNome}
+                                </TypographySmall>
+                              </TypographyListItem>
+                            )
+                          })}
+                          <TypographyListItem>
+                            <TypographySmall className="text-zinc-900">
+                              E mais {producer.split(' ').length} produtor(es)
+                            </TypographySmall>
+                          </TypographyListItem>
                         </TypographyList>
                       </div>
                     </TypographyListItem>
