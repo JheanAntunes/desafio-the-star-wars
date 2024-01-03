@@ -1,4 +1,4 @@
-import { TypePerson, TypePlanet } from '@/types/Typesfetch'
+import { TypeFilms, TypePerson, TypePlanet } from '@/types/Typesfetch'
 
 export const modifying_property_improve_UI = (caracteristica: string) => {
   switch (caracteristica.toLowerCase()) {
@@ -45,10 +45,29 @@ export const modifying_data_Planet_improve_UI = (results: TypePlanet[]) => {
   }))
 }
 
+export const modifying_data_Films_improve_UI = (results: TypeFilms[]) => {
+  return results.map((film) => ({
+    ...film,
+    title: modifying_property_improve_UI(film.title),
+    director: modifying_property_improve_UI(film.director),
+    producer: modifying_property_improve_UI(film.producer),
+    opening_crawl: modifying_property_improve_UI(film.opening_crawl),
+    characters: film.characters ? film.characters : null,
+    species: film.species ? film.species : null,
+    vehicles: film.vehicles ? film.vehicles : null,
+    starships: film.starships ? film.starships : null,
+    planets: film.planets ? film.planets : null
+  }))
+}
+
 export type TypeModifyingPerson = ReturnType<
   typeof modifying_data_Person_improve_UI
 >
 
 export type TypeModifyingPlanet = ReturnType<
   typeof modifying_data_Planet_improve_UI
+>
+
+export type TypeModifyingFilms = ReturnType<
+  typeof modifying_data_Films_improve_UI
 >
