@@ -9,16 +9,16 @@ import {
 } from '@/components/ui/carousel'
 import { TypographyList } from '@/components/ui/typography'
 import { formatedNumber } from '@/utils/formatedNumber'
-import { TypeModifyingPlanet } from '@/utils/modiying_data_improve_ui'
+import { TypeModifyingStarships } from '@/utils/modiying_data_improve_ui'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShorthandListItem from '../shorthand-list-item'
 
 type TypeSectionDesafioPersonCarouselProps = {
-  data_Improved_UI: TypeModifyingPlanet
+  data_Improved_UI: TypeModifyingStarships
 }
 
-function SectionPlanetDesafioCarousel({
+function SectionStarshipsDesafioCarousel({
   data_Improved_UI
 }: TypeSectionDesafioPersonCarouselProps) {
   return (
@@ -31,13 +31,11 @@ function SectionPlanetDesafioCarousel({
       <CarouselContent className="-ml-8">
         {data_Improved_UI.map(
           ({
-            population,
-            climate,
-            diameter,
-            gravity,
-            orbital_period,
-            rotation_period,
-            terrain,
+            starship_class,
+            model,
+            cost_in_credits,
+            length,
+            max_atmosphering_speed,
             created
           }) => (
             <CarouselItem
@@ -63,32 +61,24 @@ function SectionPlanetDesafioCarousel({
                   <CardContent>
                     <TypographyList className="group-hover:decoration-blue-500">
                       <ShorthandListItem
-                        title="População:"
-                        caracteristica={formatedNumber(population)}
+                        title="O modelo:"
+                        caracteristica={model}
                       />
                       <ShorthandListItem
-                        title="Clima:"
-                        caracteristica={climate}
+                        title="A classe:"
+                        caracteristica={starship_class}
                       />
                       <ShorthandListItem
-                        title="Diâmetro:"
-                        caracteristica={formatedNumber(diameter)}
+                        title="O custo:"
+                        caracteristica={formatedNumber(cost_in_credits)}
                       />
                       <ShorthandListItem
-                        title="Gravidade:"
-                        caracteristica={formatedNumber(gravity)}
+                        title="O comprimento em metros:"
+                        caracteristica={`${formatedNumber(length)}m`}
                       />
                       <ShorthandListItem
-                        title="Periodo orbital:"
-                        caracteristica={`${formatedNumber(orbital_period)}`}
-                      />
-                      <ShorthandListItem
-                        title="Periodo de Rotação:"
-                        caracteristica={`${rotation_period}`}
-                      />
-                      <ShorthandListItem
-                        title="Terreno:"
-                        caracteristica={terrain}
+                        title="A velocidade máxima:"
+                        caracteristica={max_atmosphering_speed}
                       />
                     </TypographyList>
                   </CardContent>
@@ -104,4 +94,4 @@ function SectionPlanetDesafioCarousel({
   )
 }
 
-export default SectionPlanetDesafioCarousel
+export default SectionStarshipsDesafioCarousel
