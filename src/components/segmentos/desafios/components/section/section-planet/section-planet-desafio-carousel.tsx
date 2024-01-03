@@ -20,6 +20,12 @@ type TypeSectionDesafioPersonCarouselProps = {
 function SectionPlanetDesafioCarousel({
   data_Improved_UI
 }: TypeSectionDesafioPersonCarouselProps) {
+  const formatedNumber = (valorCaracteristica: string) => {
+    return Number.isNaN(Number(valorCaracteristica))
+      ? valorCaracteristica
+      : new Intl.NumberFormat('pt-BR').format(Number(valorCaracteristica))
+  }
+
   return (
     <Carousel
       opts={{
@@ -63,9 +69,7 @@ function SectionPlanetDesafioCarousel({
                     <TypographyList className="group-hover:decoration-blue-500">
                       <ShorthandListItem
                         title="População:"
-                        caracteristica={new Intl.NumberFormat('pt-BR').format(
-                          Number(population)
-                        )}
+                        caracteristica={formatedNumber(population)}
                       />
                       <ShorthandListItem
                         title="Clima:"
@@ -73,17 +77,15 @@ function SectionPlanetDesafioCarousel({
                       />
                       <ShorthandListItem
                         title="Diâmetro:"
-                        caracteristica={new Intl.NumberFormat('pt-BR').format(
-                          Number(diameter)
-                        )}
+                        caracteristica={formatedNumber(diameter)}
                       />
                       <ShorthandListItem
                         title="Gravidade:"
-                        caracteristica={gravity}
+                        caracteristica={formatedNumber(gravity)}
                       />
                       <ShorthandListItem
                         title="Periodo orbital:"
-                        caracteristica={`${orbital_period}`}
+                        caracteristica={`${formatedNumber(orbital_period)}`}
                       />
                       <ShorthandListItem
                         title="Periodo de Rotação:"
