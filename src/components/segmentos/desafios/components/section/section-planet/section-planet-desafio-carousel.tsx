@@ -62,23 +62,27 @@ function SectionPlanetDesafioCarousel({
                   <CardContent>
                     <TypographyList className="group-hover:decoration-blue-500">
                       <ShorthandListItem
-                        title="população:"
-                        caracteristica={population}
+                        title="População:"
+                        caracteristica={new Intl.NumberFormat('pt-BR').format(
+                          Number(population)
+                        )}
                       />
                       <ShorthandListItem
                         title="Clima:"
                         caracteristica={climate}
                       />
                       <ShorthandListItem
-                        title="Diamentro:"
-                        caracteristica={diameter}
+                        title="Diâmetro:"
+                        caracteristica={new Intl.NumberFormat('pt-BR').format(
+                          Number(diameter)
+                        )}
                       />
                       <ShorthandListItem
                         title="Gravidade:"
                         caracteristica={gravity}
                       />
                       <ShorthandListItem
-                        title="Periodo obitral:"
+                        title="Periodo orbital:"
                         caracteristica={`${orbital_period}`}
                       />
                       <ShorthandListItem
@@ -86,7 +90,7 @@ function SectionPlanetDesafioCarousel({
                         caracteristica={`${rotation_period}`}
                       />
                       <ShorthandListItem
-                        title="terrain:"
+                        title="Terreno:"
                         caracteristica={terrain}
                       />
                     </TypographyList>
