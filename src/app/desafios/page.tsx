@@ -1,6 +1,7 @@
 import SectionDesafioFilms from '@/components/segmentos/desafios/components/section-films'
 import SectionDesafioPerson from '@/components/segmentos/desafios/components/section-person/section-desafio-person'
 import SectionDesafioPlanet from '@/components/segmentos/desafios/components/section-planet'
+import SectionDesafioSpecies from '@/components/segmentos/desafios/components/section-species'
 import SectionDesafioStarships from '@/components/segmentos/desafios/components/section-starships'
 import SectionDesafioVehicles from '@/components/segmentos/desafios/components/section-vehicle'
 
@@ -12,6 +13,7 @@ function PageDesafio() {
       <SectionDesafioFilms />
       <SectionDesafioStarships />
       <SectionDesafioVehicles />
+      <SectionDesafioSpecies />
     </main>
   )
 }
