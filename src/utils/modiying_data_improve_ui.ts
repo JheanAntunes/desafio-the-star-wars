@@ -2,6 +2,7 @@ import {
   TypeFilms,
   TypePerson,
   TypePlanet,
+  TypeSpecies,
   TypeStarships,
   TypeVehicle
 } from '@/types/Typesfetch'
@@ -97,6 +98,7 @@ export const modifying_data_STARSHIPS_improve_UI = (
     starship_class: modifying_property_improve_UI(starship.starship_class)
   }))
 }
+
 export const modifying_data_VEHICLES_improve_UI = (results: TypeVehicle[]) => {
   return results.map((vehicle) => ({
     ...vehicle,
@@ -118,6 +120,23 @@ export const modifying_data_VEHICLES_improve_UI = (results: TypeVehicle[]) => {
   }))
 }
 
+export const modifying_data_SPECIES_improve_UI = (results: TypeSpecies[]) => {
+  return results.map((specie) => ({
+    ...specie,
+    name: modifying_property_improve_UI(specie.name),
+    classification: modifying_property_improve_UI(specie.name),
+    designation: modifying_property_improve_UI(specie.designation),
+    average_height: modifying_property_improve_UI(specie.average_height),
+    skin_colors: modifying_property_improve_UI(specie.skin_colors),
+    hair_colors: modifying_property_improve_UI(specie.hair_colors),
+    eye_colors: modifying_property_improve_UI(specie.eye_colors),
+    average_lifespan: modifying_property_improve_UI(specie.average_lifespan),
+    language: modifying_property_improve_UI(specie.language),
+    films: specie.films ? specie.films : null,
+    people: specie.people ? specie.people : null
+  }))
+}
+
 export type TypeModifyingPerson = ReturnType<
   typeof modifying_data_Person_improve_UI
 >
@@ -136,4 +155,8 @@ export type TypeModifyingStarships = ReturnType<
 
 export type TypeModifyingVehicles = ReturnType<
   typeof modifying_data_VEHICLES_improve_UI
+>
+
+export type TypeModifyingSpecies = ReturnType<
+  typeof modifying_data_SPECIES_improve_UI
 >
