@@ -67,8 +67,27 @@ export type TypeStarships = {
   name: string
   passengers: string
   films: string[] | null
-  pilots: never[] | null
+  pilots: string[] | null
   starship_class: string
+  url: string
+}
+
+export type TypeVehicle = {
+  name: string
+  model: string
+  manufacturer: string
+  cost_in_credits: string
+  length: string
+  max_atmosphering_speed: string
+  crew: string
+  passengers: string
+  cargo_capacity: string
+  consumables: string
+  vehicle_class: string
+  pilots: string[] | null
+  films: string[] | null
+  created: string
+  edited: string
   url: string
 }
 
