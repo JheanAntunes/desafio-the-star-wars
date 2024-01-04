@@ -6,6 +6,7 @@ export const BASE_URL_API_STARSHIPS =
   'https://swapi.dev/api/starships/?format=json'
 export const BASE_URL_API_VEHICLES =
   'https://swapi.dev/api/vehicles/?format=json'
+export const BASE_URL_API_SPECIES = 'https://swapi.dev/api/species/?format=json'
 
 export const fetchGet = async <TData>(url: string, options?: RequestInit) => {
   const response = await fetch(url, options)
