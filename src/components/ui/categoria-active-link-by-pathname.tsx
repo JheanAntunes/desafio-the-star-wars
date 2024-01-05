@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 import { TypeDataLinks } from '@/utils/data-link'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import useActiveLinkPathname from '../hooks/useActiveLinkPathname'
 import { CategoriaContainerListLinksItem } from './categoria-links'
 
 type TypeCategoriaActiveLinkProps = {
@@ -12,9 +12,7 @@ type TypeCategoriaActiveLinkProps = {
 export default function CategoriaActiveLink({
   dataLinks
 }: TypeCategoriaActiveLinkProps) {
-  const pathname = usePathname()
-
-  const activeLink = (href: string) => pathname === href
+  const { activeLink } = useActiveLinkPathname()
 
   return (
     <>
