@@ -1,11 +1,16 @@
+import { cn } from '@/lib/utils'
 import { TypographyH2 } from './typography'
 
 export function CategoriaContainer({
   children,
+  className,
   ...restProps
 }: React.ComponentProps<'div'>) {
   return (
-    <section className="container flex flex-col gap-5" {...restProps}>
+    <section
+      className={cn('container flex flex-col gap-5', className)}
+      {...restProps}
+    >
       {children}
     </section>
   )
@@ -19,10 +24,17 @@ export function CategoriaTitle({
 
 export function CategoriaContainerListLinks({
   children,
+  className,
   ...restProps
 }: React.ComponentProps<'ul'>) {
   return (
-    <ul className="flex items-center justify-between" {...restProps}>
+    <ul
+      className={cn(
+        'hidden items-center justify-between last:md:flex',
+        className
+      )}
+      {...restProps}
+    >
       {children}
     </ul>
   )
