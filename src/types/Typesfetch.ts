@@ -8,10 +8,10 @@ export type TypePerson = {
   birth_year: string
   gender: string
   homeworld: string
-  films: string[] | null[]
-  species: string[] | null[]
-  vehicles: string[] | null[]
-  starships: string[] | null[]
+  films: string[] | null
+  species: string[] | null
+  vehicles: string[] | null
+  starships: string[] | null
   created: string
   edited: string
   url: string
