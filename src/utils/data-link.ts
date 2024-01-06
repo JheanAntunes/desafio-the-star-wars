@@ -9,7 +9,7 @@ export const dataLinksDesafios: TypeDataLinks[] = [
     content: 'Pessoas'
   },
   {
-    href: '/desafios/planet',
+    href: '/desafios/planets',
     content: 'Planetas'
   },
   {
