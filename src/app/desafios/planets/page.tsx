@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 type TypeParamsSearch = {
   page?: string
 }
-function PagePersonDesafio({
+function PagePlanetDesafio({
   searchParams
 }: {
   searchParams: TypeParamsSearch
@@ -31,4 +31,4 @@ function PagePersonDesafio({
   )
 }
 
-export default PagePersonDesafio
+export default PagePlanetDesafio
