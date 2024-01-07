@@ -21,7 +21,7 @@ export const dataLinksDesafios: TypeDataLinks[] = [
     content: 'Nave Estelares'
   },
   {
-    href: '/desafios/vehicle',
+    href: '/desafios/vehicles',
     content: 'Veículos'
   },
   {
