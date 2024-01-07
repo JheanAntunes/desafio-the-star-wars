@@ -6,13 +6,11 @@ import { TypeModifyingPerson } from '@/utils/modiying_data_improve_ui'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type TypeLinkCardsPersonProps = {
+type TypePersonCardProps = {
   dataFormatedImproveUi: TypeModifyingPerson
 }
 
-const LinkCardsPerson = ({
-  dataFormatedImproveUi
-}: TypeLinkCardsPersonProps) => {
+const PersonCard = ({ dataFormatedImproveUi }: TypePersonCardProps) => {
   return (
     <>
       {dataFormatedImproveUi.map(
@@ -83,4 +81,4 @@ const LinkCardsPerson = ({
   )
 }
 
-export default LinkCardsPerson
+export default PersonCard
