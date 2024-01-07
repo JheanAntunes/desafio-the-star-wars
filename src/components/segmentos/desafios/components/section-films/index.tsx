@@ -1,10 +1,7 @@
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
-import LogicSectionDesafioFilms from './logic-section-desafio-films'
 import SectionFilmsDesafioCarousel from './section-films-desafio-carousel'
 
-async function SectionDesafioFilms() {
-  const { data_Improved_UI } = await LogicSectionDesafioFilms()
-
+function SectionDesafioFilms() {
   return (
     <section className="container flex flex-col gap-5">
       <div>
@@ -12,7 +9,7 @@ async function SectionDesafioFilms() {
         <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionFilmsDesafioCarousel data_Improved_UI={data_Improved_UI} />
+        <SectionFilmsDesafioCarousel />
       </div>
     </section>
   )

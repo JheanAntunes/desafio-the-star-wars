@@ -1,7 +1,7 @@
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
-import LinkCardsPerson from './link-cards-person'
+import PersonCard from './PersonCard'
 
 type TypePersonCardsProps = {
   page?: string
@@ -14,7 +14,12 @@ const PersonCards = async ({ page }: TypePersonCardsProps) => {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {/* Grid */}
-      <LinkCardsPerson dataFormatedImproveUi={dataFormatedImproveUi} />
+      {dataFormatedImproveUi.map((dataPerson) => (
+        <PersonCard
+          dataFormatedImproveUi={dataPerson}
+          key={dataPerson.created + dataPerson.hair_color}
+        />
+      ))}
     </div>
   )
 }
