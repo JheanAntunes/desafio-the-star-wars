@@ -14,7 +14,12 @@ const PersonCards = async ({ page }: TypePersonCardsProps) => {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {/* Grid */}
-      <PersonCard dataFormatedImproveUi={dataFormatedImproveUi} />
+      {dataFormatedImproveUi.map((dataPerson) => (
+        <PersonCard
+          dataFormatedImproveUi={dataPerson}
+          key={dataPerson.created + dataPerson.hair_color}
+        />
+      ))}
     </div>
   )
 }
