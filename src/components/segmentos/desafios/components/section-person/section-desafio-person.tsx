@@ -1,9 +1,7 @@
 import { TypographyH3, TypographyP } from '@/components/ui/typography'
-import LogicSectionDesafioPerson from './logic-section-desafio-person'
-import SectionDesafioCarousel from './section-desafio-carousel'
+import SectionDesafioPersonCarousel from './section-desafio-person-carousel'
 
-async function SectionDesafioPerson() {
-  const { data_Improved_UI } = await LogicSectionDesafioPerson()
+function SectionDesafioPerson() {
   return (
     <section className="container flex flex-col gap-5">
       <div>
@@ -13,7 +11,7 @@ async function SectionDesafioPerson() {
         </TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionDesafioCarousel data_Improved_UI={data_Improved_UI} />
+        <SectionDesafioPersonCarousel />
       </div>
     </section>
   )
