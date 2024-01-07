@@ -1,7 +1,7 @@
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
 import SectionSpeciesDesafioCarousel from './section-species-desafio-carousel'
 
-async function SectionDesafioSpecies() {
+function SectionDesafioSpecies() {
   return (
     <section className="container flex flex-col gap-5">
       <div>

@@ -1,7 +1,7 @@
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
 import SectionFilmsDesafioCarousel from './section-films-desafio-carousel'
 
-async function SectionDesafioFilms() {
+function SectionDesafioFilms() {
   return (
     <section className="container flex flex-col gap-5">
       <div>
