@@ -2,6 +2,7 @@ import EspadaLuz from '@/components/assets/espada-luz.png'
 import ImgRobo from '@/components/assets/img-robo-png.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import LinkActive from '../ui/LinkActive'
 import Logo from './logo'
 export default function Header() {
   return (
@@ -10,12 +11,9 @@ export default function Header() {
         <Logo />
         <div className="flex gap-8">
           <div className="flex items-center gap-1">
-            <Link
-              href="/desafios"
-              className="hoverLink hidden text-2xl sm:inline"
-            >
+            <LinkActive href="/desafios" className="hidden text-2xl sm:inline">
               Desafios
-            </Link>
+            </LinkActive>
             <Link href="/desafios" className="relative h-8 w-8 overflow-hidden">
               <Image
                 src={EspadaLuz}
@@ -27,9 +25,12 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex items-center gap-1">
-            <Link href="/docs" className="hoverLink hidden text-2xl sm:inline">
+            <LinkActive
+              href="/docs"
+              className="hoverLink hidden text-2xl sm:inline"
+            >
               Documentação
-            </Link>
+            </LinkActive>
             <Link href="/docs" className="relative h-8 w-8 overflow-hidden">
               <Image
                 src={ImgRobo}
