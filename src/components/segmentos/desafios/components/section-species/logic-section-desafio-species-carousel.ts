@@ -2,7 +2,7 @@ import { TypeFetch, TypeSpecies } from '@/types/Typesfetch'
 import { BASE_URL_API_SPECIES, fetchGet } from '@/utils/fetch'
 import { modifying_data_SPECIES_improve_UI } from '@/utils/modiying_data_improve_ui'
 
-export const LogicSectionSpecies = async () => {
+export const LogicSectionDesafioSpeciesCarousel = async () => {
   const { results } =
     await fetchGet<TypeFetch<TypeSpecies>>(BASE_URL_API_SPECIES)
 
