@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 import { TypeDataLinks } from '@/utils/data-link'
 import Link from 'next/link'
-import useActiveLinkPathname from '../hooks/useActiveLinkPathname'
+import useActiveLinkPathname from '../../hooks/useActiveLinkPathname'
 import { CategoriaContainerListLinksItem } from './categoria-links'
 
 type TypeCategoriaActiveLinkProps = {

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { TypographyH2 } from './typography'
+import { TypographyH2 } from '../../ui/typography'
 
 export function CategoriaContainer({
   children,

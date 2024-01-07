@@ -1,11 +1,11 @@
 import EspadaLuz from '@/components/assets/espada-luz.png'
-import { Button } from '@/components/ui/button'
-import CategoriaActiveLink from '@/components/ui/categoria-active-link-by-pathname'
+import CategoriaActiveLink from '@/components/layouts/desafio/categoria-active-link-by-pathname'
 import {
   CategoriaContainer,
   CategoriaContainerListLinks,
   CategoriaTitle
-} from '@/components/ui/categoria-links'
+} from '@/components/layouts/desafio/categoria-links'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
