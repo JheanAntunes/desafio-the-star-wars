@@ -5,16 +5,11 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel'
-import { TypeModifyingVehicles } from '@/utils/modiying_data_improve_ui'
 import VehiclesCard from '../../vehicles/components/vehicles-card'
+import { LogicSectionDesafioVehiclesCarousel } from './logic-section-desafio-vehicles-carousel'
 
-type TypeSectionDesafioPersonCarouselProps = {
-  data_Improved_UI: TypeModifyingVehicles
-}
-
-function SectionVehiclesDesafioCarousel({
-  data_Improved_UI
-}: TypeSectionDesafioPersonCarouselProps) {
+async function SectionVehiclesDesafioCarousel() {
+  const { data_improved_UI } = await LogicSectionDesafioVehiclesCarousel()
   return (
     <Carousel
       opts={{
@@ -23,7 +18,7 @@ function SectionVehiclesDesafioCarousel({
       className="w-full max-w-xs md:max-w-3xl lg:max-w-5xl"
     >
       <CarouselContent className="-ml-8">
-        {data_Improved_UI.map((dataVehicle) => (
+        {data_improved_UI.map((dataVehicle) => (
           <CarouselItem
             key={dataVehicle.created}
             className="pl-8 md:basis-1/2 lg:basis-1/3"
