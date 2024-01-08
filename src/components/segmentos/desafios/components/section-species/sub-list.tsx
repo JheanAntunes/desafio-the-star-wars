@@ -16,7 +16,7 @@ const SubList = ({ dataCaracteristicas, break_by_index }: TypeSubListProps) => {
   })
 
   return (
-    <TypographyList>
+    <TypographyList className="my-0">
       {dataCaracteristicas.map((caracteristica, index) => {
         if (isBreak(index)) return null
 
