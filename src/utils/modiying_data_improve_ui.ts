@@ -32,9 +32,9 @@ export const modifying_data_Person_improve_UI = (results: TypePerson[]) => {
     gender: modifying_property_improve_UI(person.hair_color),
     eye_color: modifying_property_improve_UI(person.hair_color),
     films: person.films ? person.films : null,
-    species: person.films ? person.films : null,
-    starships: person.films ? person.films : null,
-    vehicles: person.films ? person.films : null
+    species: person.species ? person.species : null,
+    starships: person.starships ? person.starships : null,
+    vehicles: person.vehicles ? person.vehicles : null
   }))
 }
 
