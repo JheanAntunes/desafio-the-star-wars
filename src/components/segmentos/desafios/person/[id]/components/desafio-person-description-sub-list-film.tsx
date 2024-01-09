@@ -1,8 +1,7 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeFilms } from '@/types/Typesfetch'
-import { fetchGet } from '@/utils/fetch'
 import SubList from '../../../components/section-species/sub-list'
-
+import promiseAllFormatedDataDescription from './utils/promiseAll-formated-data-description-sub-list'
 type TypeDesafioPersonDescriptionSubListFilmsProps = {
   urls: string[]
 }
@@ -10,14 +9,15 @@ type TypeDesafioPersonDescriptionSubListFilmsProps = {
 const DesafioPersonDescriptionSubListFilms = async ({
   urls
 }: TypeDesafioPersonDescriptionSubListFilmsProps) => {
-  const arrayFetch = urls.map((url) => fetchGet<TypeFilms>(url))
-  const resolvedPromisesArray = await Promise.all(arrayFetch)
-  const TitleFilms = resolvedPromisesArray.map(({ title }) => title)
+  const TitleFilms = await promiseAllFormatedDataDescription<TypeFilms>({
+    urls,
+    chave: 'title'
+  })
 
   return (
     <TypographyListItem>
       <TypographySmall> Filmes em que essa pessoa esteve:</TypographySmall>
-      <SubList dataCaracteristicas={TitleFilms} />
+      {TitleFilms && <SubList dataCaracteristicas={TitleFilms} />}
     </TypographyListItem>
   )
 }

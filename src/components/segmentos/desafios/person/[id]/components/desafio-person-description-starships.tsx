@@ -1,7 +1,7 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeStarships } from '@/types/Typesfetch'
-import { fetchGet } from '@/utils/fetch'
 import SubList from '../../../components/section-species/sub-list'
+import promiseAllFormatedDataDescription from './utils/promiseAll-formated-data-description-sub-list'
 
 type TypeDesafioPersonDescriptionSubListStarshipsProps = {
   urls: string[]
@@ -10,11 +10,11 @@ type TypeDesafioPersonDescriptionSubListStarshipsProps = {
 const DesafioPersonDescriptionSubListStarships = async ({
   urls
 }: TypeDesafioPersonDescriptionSubListStarshipsProps) => {
-  const arrayFetch = urls.map((url) =>
-    fetchGet<TypeStarships>(`${url}?format=json`)
-  )
-  const resolvedPromisesArray = await Promise.all(arrayFetch)
-  const arrayNamesOfspecies = resolvedPromisesArray.map(({ name }) => name)
+  const arrayNamesOfspecies =
+    await promiseAllFormatedDataDescription<TypeStarships>({
+      urls,
+      chave: 'name'
+    })
 
   return (
     <TypographyListItem>
@@ -22,7 +22,9 @@ const DesafioPersonDescriptionSubListStarships = async ({
         {' '}
         Naves estelares que esta pessoa pilotou:
       </TypographySmall>
-      <SubList dataCaracteristicas={arrayNamesOfspecies} />
+      {arrayNamesOfspecies && (
+        <SubList dataCaracteristicas={arrayNamesOfspecies} />
+      )}
     </TypographyListItem>
   )
 }
