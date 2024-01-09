@@ -13,7 +13,7 @@ const SectionDesafioPersonCarousel = async () => {
           key={dataPerson.created}
           className="pl-8 md:basis-1/2 lg:basis-1/3"
         >
-          <Link className="group" href={`/desafios/person/${index + 1}`}>
+          <Link className="group" href={`/desafios/person/${index}`}>
             <PersonCard dataFormatedImproveUi={dataPerson} />
           </Link>
         </CarouselItem>
