@@ -21,7 +21,7 @@ const SubList = ({ dataCaracteristicas, break_by_index }: TypeSubListProps) => {
         if (isBreak(index)) return null
 
         return (
-          <TypographyListItem key={caracteristica}>
+          <TypographyListItem key={caracteristica + index}>
             <TypographySmall className="text-zinc-900">
               {caracteristica}
             </TypographySmall>
