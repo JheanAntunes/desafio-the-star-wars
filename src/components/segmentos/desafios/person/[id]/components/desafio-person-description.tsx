@@ -1,5 +1,5 @@
 import { TypographyH2, TypographyList } from '@/components/ui/typography'
-import { TypePerson } from '@/types/Typesfetch'
+import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { Fragment, Suspense } from 'react'
@@ -18,9 +18,10 @@ const DesafioPersonDescription = async ({
   id,
   page
 }: TypeDesafioPersonDescriptionProps) => {
-  const dataPerson = await fetchGet<TypePerson>(
-    `${BASE_URL_API}/people/${id}/?page=${page}&format=json`
+  const { results } = await fetchGet<TypeFetch<TypePerson>>(
+    `${BASE_URL_API}/people/?page=${page}&format=json`
   )
+  const dataPerson = results[Number(id)]
 
   const dataFormated = modifying_data_Person_improve_UI([dataPerson])
 
