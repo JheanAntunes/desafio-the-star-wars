@@ -1,9 +1,11 @@
+import SkeletonList from '@/components/ui/skeletons/skeleton-list'
 import { TypographyH2, TypographyList } from '@/components/ui/typography'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { Fragment, Suspense } from 'react'
 import ShorthandListItem from '../../../components/shorthand-list-item'
+import DesafioPersonDescriptionHomeWorld from './desafio-person-description-homeworld'
 import DesafioPersonDescriptionSubListSpecies from './desafio-person-description-species'
 import DesafioPersonDescriptionSubListStarships from './desafio-person-description-starships'
 import { default as DesafioPersonDescriptionSubListFilms } from './desafio-person-description-sub-list-film'
@@ -43,7 +45,8 @@ const DesafioPersonDescription = async ({
             species,
             films,
             starships,
-            vehicles
+            vehicles,
+            homeworld
           }) => {
             return (
               <Fragment
@@ -77,27 +80,30 @@ const DesafioPersonDescription = async ({
                   title="A cor da pele desta pessoa:"
                   caracteristica={skin_color}
                 />
+                {homeworld && (
+                  <Suspense fallback={<SkeletonList />}>
+                    <DesafioPersonDescriptionHomeWorld homeworld={homeworld} />
+                  </Suspense>
+                )}
                 {films && films.length > 0 && (
-                  <Suspense fallback={<p>Carregando lista de filmes</p>}>
+                  <Suspense fallback={<SkeletonList />}>
                     <DesafioPersonDescriptionSubListFilms urls={films} />
                   </Suspense>
                 )}
                 {species && species.length > 0 && (
-                  <Suspense fallback={<p>Carregando lista de Espécie</p>}>
+                  <Suspense fallback={<SkeletonList />}>
                     <DesafioPersonDescriptionSubListSpecies urls={species} />
                   </Suspense>
                 )}
                 {starships && starships.length > 0 && (
-                  <Suspense
-                    fallback={<p>Carregando lista de Nave estelares</p>}
-                  >
+                  <Suspense fallback={<SkeletonList />}>
                     <DesafioPersonDescriptionSubListStarships
                       urls={starships}
                     />
                   </Suspense>
                 )}
                 {vehicles && vehicles.length > 0 && (
-                  <Suspense fallback={<p>Carregando lista de veículos</p>}>
+                  <Suspense fallback={<SkeletonList />}>
                     <DesafioPersonDescriptionSubListVehicles urls={vehicles} />
                   </Suspense>
                 )}
@@ -111,20 +117,3 @@ const DesafioPersonDescription = async ({
 }
 
 export default DesafioPersonDescription
-
-// name string -- O nome desta pessoa.
-// birth_year string -- O ano de nascimento da pessoa, usando o padrão do universo de ABY ou ABY - Antes da Batalha de Yavin ou Depois da Batalha de Yavin. A Batalha de Yavin é uma batalha que ocorre no final do episódio IV de Star Wars: Uma Nova Esperança.
-// eye_color string - A cor dos olhos desta pessoa. Será "desconhecido" se não for conhecido ou "n/a" se a pessoa não tiver olho.
-// gender string - O sexo desta pessoa. Ou "masculino", "feminino" ou "desconhecido", "n/a" se a pessoa não tiver gênero.
-// hair_color string - A cor do cabelo desta pessoa. Será "desconhecido" se não for conhecido ou "n/a" se a pessoa não tiver cabelo.
-// height string -- A altura da pessoa em centímetros.
-// mass string -- A massa da pessoa em quilogramas.
-// skin_color string -- A cor da pele desta pessoa.
-// homeworld string -- O URL de um recurso planetário, um planeta onde esta pessoa nasceu ou habita.
-// films matriz -- Uma série de URLs de recursos de filmes em que essa pessoa esteve.
-// species matriz -- Uma série de URLs de recursos de espécies às quais esta pessoa pertence.
-// starships matriz -- Uma série de URLs de recursos de naves estelares que esta pessoa pilotou.
-// vehicles matriz -- Uma série de URLs de recursos de veículos que essa pessoa pilotou.
-// url string -- o URL hipermídia deste recurso.
-// created string -- o formato de data ISO 8601 da hora em que este recurso foi criado.
-// edited string -- o formato de data ISO 8601 da hora em que este recurso foi editado.
