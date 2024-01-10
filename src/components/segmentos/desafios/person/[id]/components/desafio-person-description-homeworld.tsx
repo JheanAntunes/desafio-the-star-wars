@@ -1,4 +1,4 @@
-import { TypographyListItem } from '@/components/ui/typography'
+import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypePlanet } from '@/types/Typesfetch'
 import { fetchGet } from '@/utils/fetch'
 
@@ -11,7 +11,14 @@ const DesafioPersonDescriptionHomeWorld = async ({
 }: TypeDesafioPersonDescriptionHomeWorldProps) => {
   const { name } = await fetchGet<TypePlanet>(homeworld)
 
-  return <TypographyListItem>{name}</TypographyListItem>
+  return (
+    <TypographyListItem>
+      <TypographySmall>
+        um planeta onde esta pessoa nasceu ou habita
+      </TypographySmall>
+      <TypographySmall>{name}</TypographySmall>
+    </TypographyListItem>
+  )
 }
 
 export default DesafioPersonDescriptionHomeWorld
