@@ -13,7 +13,7 @@ const DesafioPersonDescriptionHomeWorld = async ({
 
   return (
     <TypographyListItem className="text-sm font-medium leading-none text-zinc-900">
-      um planeta onde esta pessoa nasceu ou habita {name}
+      um planeta onde esta pessoa nasceu ou habita: {name}
     </TypographyListItem>
   )
 }
