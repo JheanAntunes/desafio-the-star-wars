@@ -14,10 +14,13 @@ const DontShowComponentChallengeCompleted = ({
   const { challengeCompleted } = useContextChallengePersonCompleted()
   return challengeCompleted ? (
     <div className="grid grid-cols-1 gap-1">
-      <Badge className="mx-auto border-emerald-500" variant="outline">
+      <Badge
+        className="animate-fade-down animate-once animate-duration-500 animate-delay-100 animate-ease-linear mx-auto border-emerald-500 font-sans font-normal"
+        variant="outline"
+      >
         Desafio Concluído
       </Badge>
-      <TypographyH1 className="lg:text-center">
+      <TypographyH1 className="animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear lg:text-center">
         {secretCaracteristica}
       </TypographyH1>
     </div>
