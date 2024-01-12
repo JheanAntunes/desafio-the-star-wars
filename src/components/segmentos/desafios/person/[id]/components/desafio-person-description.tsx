@@ -1,8 +1,11 @@
+import { buttonVariants } from '@/components/ui/button'
 import SkeletonList from '@/components/ui/skeletons/skeleton-list'
 import { TypographyH2, TypographyList } from '@/components/ui/typography'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
+import { NavigationIcon } from 'lucide-react'
+import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
 import ShorthandListItem from '../../../components/shorthand-list-item'
 import DesafioPersonDescriptionHomeWorld from './desafio-person-description-homeworld'
@@ -27,9 +30,25 @@ const DesafioPersonDescription = async ({
 
   const dataFormated = modifying_data_Person_improve_UI([dataPerson])
 
+  const isNextIndex = Number(id) + 1
+  const NextDesafio = isNextIndex < results.length
+
   return (
     <section className="flex flex-col">
-      <TypographyH2>Descrição</TypographyH2>
+      <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        <TypographyH2 className="order-2 md:order-1">Descrição</TypographyH2>
+        {NextDesafio && (
+          <Link
+            href={`/desafios/person/${isNextIndex}?page=${page}`}
+            className={buttonVariants({
+              variant: 'outline',
+              className: 'order-1 flex gap-1 font-sans md:order-2'
+            })}
+          >
+            Próximo Desafio <NavigationIcon width={20} height={20} />
+          </Link>
+        )}
+      </div>
       <TypographyList>
         {dataFormated.map(
           ({
