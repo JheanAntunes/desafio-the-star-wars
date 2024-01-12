@@ -7,7 +7,7 @@ export type TypePerson = {
   eye_color: string
   birth_year: string
   gender: string
-  homeworld: string
+  homeworld: string | null
   films: string[] | null
   species: string[] | null
   vehicles: string[] | null

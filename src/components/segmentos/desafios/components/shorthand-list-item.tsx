@@ -1,4 +1,4 @@
-import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
+import { TypographyListItem } from '@/components/ui/typography'
 
 type TypeShorthandListItemProps = {
   title: string
@@ -9,13 +9,8 @@ function ShorthandListItem({
   caracteristica
 }: TypeShorthandListItemProps) {
   return (
-    <TypographyListItem className="text-zinc-700">
-      <div className="flex items-center justify-between">
-        <TypographySmall className="text-zinc-900">{title}</TypographySmall>{' '}
-        <TypographySmall className="text-zinc-900">
-          {caracteristica}
-        </TypographySmall>
-      </div>
+    <TypographyListItem className="text-sm font-medium leading-none text-zinc-900">
+      {title} {caracteristica}
     </TypographyListItem>
   )
 }

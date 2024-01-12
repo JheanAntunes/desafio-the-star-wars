@@ -1,49 +1,32 @@
 import { Skeleton } from '@/components/ui/skeleton'
+import SkeletonList from './skeleton-list'
 
 export function SkeletonCards() {
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="rounded p-5">
+      <Skeleton className="h-80 rounded p-5">
         <Skeleton className="h-7 w-full" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
-        <Skeleton className="h-4 w-full pl-2" />
+        <SkeletonList />
       </Skeleton>
     </div>
   )
