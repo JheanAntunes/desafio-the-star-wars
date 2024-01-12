@@ -1,6 +1,7 @@
 import { TypeFetch, TypePlanet } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Planet_improve_UI } from '@/utils/modiying_data_improve_ui'
+import Link from 'next/link'
 import { Fragment } from 'react'
 import PlanetCard from './planet-card'
 
@@ -15,9 +16,14 @@ const PlanetCards = async ({ page }: TypePlanetCardsProps) => {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {/* Grid */}
-      {dataFormatedImproveUi.map((dataPlanet) => (
+      {dataFormatedImproveUi.map((dataPlanet, index) => (
         <Fragment key={dataPlanet.created + dataPlanet.edited}>
-          <PlanetCard {...dataPlanet} />
+          <Link
+            className="group"
+            href={`/desafios/planets/${index}?page=${page ?? 1}`}
+          >
+            <PlanetCard {...dataPlanet} />
+          </Link>
         </Fragment>
       ))}
     </div>
