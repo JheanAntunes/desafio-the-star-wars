@@ -1,4 +1,4 @@
-import { TypeSchemaFormWhoIs } from '@/components/schema/schema-form-who-is'
+import { TypeSchemaFormFieldName } from '@/components/schema/schema-form-who-is'
 import { SubmitHandler } from 'react-hook-form'
 
 import ToastFailedChallenger from '@/components/assets/toast-failed-challenger'
@@ -17,7 +17,7 @@ const LogicFormWhoIs = ({ secretCaracteristica }: TypeLogicFormWhoIsProps) => {
 
   const formatedSecretCaracteristica = formatedString(secretCaracteristica)
 
-  const formValidatedSuccessfully: SubmitHandler<TypeSchemaFormWhoIs> = (
+  const formValidatedSuccessfully: SubmitHandler<TypeSchemaFormFieldName> = (
     dataForm
   ) => {
     if (formatedString(dataForm.name) === formatedSecretCaracteristica) {
