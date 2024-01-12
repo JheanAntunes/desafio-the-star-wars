@@ -1,7 +1,8 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeFilms } from '@/types/Typesfetch'
+import promiseAllFormatedDataDescriptionSubList from '@/utils/promiseAll-formated-data-description-sub-list'
 import SubList from '../../../components/section-species/sub-list'
-import promiseAllFormatedDataDescription from './utils/promiseAll-formated-data-description-sub-list'
+
 type TypeDesafioPersonDescriptionSubListFilmsProps = {
   urls: string[]
 }
@@ -9,7 +10,7 @@ type TypeDesafioPersonDescriptionSubListFilmsProps = {
 const DesafioPersonDescriptionSubListFilms = async ({
   urls
 }: TypeDesafioPersonDescriptionSubListFilmsProps) => {
-  const TitleFilms = await promiseAllFormatedDataDescription<TypeFilms>({
+  const TitleFilms = await promiseAllFormatedDataDescriptionSubList<TypeFilms>({
     urls,
     chave: 'title'
   })

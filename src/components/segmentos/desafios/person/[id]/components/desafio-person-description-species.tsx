@@ -1,7 +1,7 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeSpecies } from '@/types/Typesfetch'
+import promiseAllFormatedDataDescriptionSubList from '@/utils/promiseAll-formated-data-description-sub-list'
 import SubList from '../../../components/section-species/sub-list'
-import promiseAllFormatedDataDescriptionSubList from './utils/promiseAll-formated-data-description-sub-list'
 
 type TypeDesafioPersonDescriptionSubListSpeciesProps = {
   urls: string[]

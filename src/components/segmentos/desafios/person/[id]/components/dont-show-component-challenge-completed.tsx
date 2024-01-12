@@ -15,12 +15,12 @@ const DontShowComponentChallengeCompleted = ({
   return challengeCompleted ? (
     <div className="grid grid-cols-1 gap-1">
       <Badge
-        className="animate-fade-down animate-once animate-duration-500 animate-delay-100 animate-ease-linear w-fit border-emerald-500 font-sans font-normal md:mx-auto"
+        className="w-fit animate-fade-down border-emerald-500 font-sans font-normal animate-delay-100 animate-duration-500 animate-once animate-ease-linear md:mx-auto"
         variant="outline"
       >
         Desafio Concluído
       </Badge>
-      <TypographyH1 className="animate-fade animate-once animate-duration-500 animate-delay-100 animate-ease-linear md:text-center lg:text-center">
+      <TypographyH1 className="animate-fade animate-delay-100 animate-duration-500 animate-once animate-ease-linear md:text-center lg:text-center">
         {secretCaracteristica}
       </TypographyH1>
     </div>

@@ -1,10 +1,11 @@
+import { TypeSchemaFormWhoIs } from '@/components/schema/schema-form-who-is'
 import { SubmitHandler } from 'react-hook-form'
-import ToastCompletedChallenger from '../hook/toast-completed-challenger'
-import ToastFailedChallenger from '../hook/toast-failed-challenger'
+
+import ToastFailedChallenger from '@/components/assets/toast-failed-challenger'
+import ToastCompletedChallenger from '@/components/hooks/toast-completed-challenger'
+import { formatedString } from '@/utils/formated-string'
+import logicLocalStorageDataChallenger from '@/utils/logic-localStorage-data-challenger'
 import useFormWhoIs from '../hook/useFormWhoIs'
-import { TypeSchemaFormWhoIs } from '../schema/schema-form-who-is'
-import { formatedString } from '../utils/formated-string'
-import logicLocalStorageDataChallenger from './logic-localStorage-data-challenger'
 
 type TypeLogicFormWhoIsProps = {
   secretCaracteristica: string

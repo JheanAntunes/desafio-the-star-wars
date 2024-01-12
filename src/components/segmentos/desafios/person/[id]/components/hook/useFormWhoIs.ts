@@ -1,11 +1,11 @@
+import {
+  TypeSchemaFormWhoIs,
+  schemaFormWhoIs
+} from '@/components/schema/schema-form-who-is'
 import { useContextChallengePersonCompleted } from '@/context/context-challenge-person-completed'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useId } from 'react'
 import { useForm } from 'react-hook-form'
-import {
-  TypeSchemaFormWhoIs,
-  schemaFormWhoIs
-} from '../schema/schema-form-who-is'
 
 const useFormWhoIs = () => {
   const form = useForm<TypeSchemaFormWhoIs>({
