@@ -23,7 +23,7 @@ const DesafioPerson = async ({ id, page }: TypeDesafioPersonProps) => {
 
   return (
     <DontShowComponentChallengeCompleted secretCaracteristica={dataPerson.name}>
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="text-center">
         <TypographyH1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
           Desafio de Pessoa
         </TypographyH1>
