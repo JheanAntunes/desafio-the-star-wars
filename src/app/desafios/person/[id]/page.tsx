@@ -1,6 +1,7 @@
 import DesafioPerson from '@/components/segmentos/desafios/person/[id]/components/desafio-person'
 import DesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/desafio-person-description'
 import SkeletonDesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/skeletons/skeletonDesafioPersonDescription'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Suspense } from 'react'
 
 type TypeParams = {
@@ -24,7 +25,7 @@ const PageDinamicaPersonDesafio = ({
   const { page } = searchParams
   return (
     <main className="container my-8 flex flex-col gap-8">
-      <Suspense fallback={<p>Carregando...</p>}>
+      <Suspense fallback={<Skeleton className="h-96 w-full" />}>
         <DesafioPerson id={id} page={page ?? '1'} />
       </Suspense>
       <Suspense fallback={<SkeletonDesafioPersonDescription />}>
