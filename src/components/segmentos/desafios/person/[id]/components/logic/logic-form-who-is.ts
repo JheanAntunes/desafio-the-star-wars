@@ -1,34 +1,40 @@
 import { SubmitHandler } from 'react-hook-form'
+import ToastCompletedChallenger from '../hook/toast-completed-challenger'
+import ToastFailedChallenger from '../hook/toast-failed-challenger'
 import useFormWhoIs from '../hook/useFormWhoIs'
 import { TypeSchemaFormWhoIs } from '../schema/schema-form-who-is'
 import { formatedString } from '../utils/formated-string'
+import logicLocalStorageDataChallenger from './logic-localStorage-data-challenger'
 
 type TypeLogicFormWhoIsProps = {
   secretCaracteristica: string
 }
 
 const LogicFormWhoIs = ({ secretCaracteristica }: TypeLogicFormWhoIsProps) => {
-  const { form, generateAccessibilityID, toast, setChallengeCompleted } =
+  const { form, generateAccessibilityID, setChallengeCompleted } =
     useFormWhoIs()
+
+  const formatedSecretCaracteristica = formatedString(secretCaracteristica)
+
   const formValidatedSuccessfully: SubmitHandler<TypeSchemaFormWhoIs> = (
     dataForm
   ) => {
-    if (
-      formatedString(dataForm.name) === formatedString(secretCaracteristica)
-    ) {
-      toast({
-        title: 'Parabens!',
-        description:
-          'Desafio concluído. Você pode voltar para página de desafios dessa categoria para encontrar mais desafios.'
-      })
-      // Challenge Completed
+    if (formatedString(dataForm.name) === formatedSecretCaracteristica) {
+      //toast: message completed
+      ToastCompletedChallenger({})
+
+      //context: Challenge Completeds
       setChallengeCompleted(true)
-    } else {
-      toast({
-        title: 'Oops!',
-        description: 'Você errou, mas não desista.',
-        variant: 'destructive'
+
+      //localStorage:
+      logicLocalStorageDataChallenger({
+        storageChave: 'storageChallenger',
+        storageValue: formatedSecretCaracteristica,
+        propertyAddValue: 'challengerPersons'
       })
+    } else {
+      //toast: message failed
+      ToastFailedChallenger({})
     }
   }
 
