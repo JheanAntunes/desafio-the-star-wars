@@ -1,8 +1,8 @@
-import ToastFailedChallenger from '@/components/assets/toast-failed-challenger'
-import ToastCompletedChallenger from '@/components/hooks/toast-completed-challenger'
 import { TypeSchemaFormFieldName } from '@/components/schema/schema-form-who-is'
 import { formatedString } from '@/utils/formated-string'
 import logicLocalStorageDataChallenger from '@/utils/logic-localStorage-data-challenger'
+import ToastCompletedChallenger from '@/utils/toast-completed-challenger'
+import ToastFailedChallenger from '@/utils/toast-failed-challenger'
 import { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 import { SubmitHandler } from 'react-hook-form'
 
