@@ -1,5 +1,5 @@
 import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
-import { TypeFetch, TypePlanet } from '@/types/Typesfetch'
+import { TypeFetch, TypeFetchCategory, TypePlanet } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { formatedString } from '@/utils/formated-string'
 import { Suspense } from 'react'
@@ -10,15 +10,17 @@ type TypeChallengerCompletedProps = {
   id: string
   page: string
   challengerCompleted?: string
+  fetchCategory: TypeFetchCategory
 }
 
 const ChallengerCompleted = async ({
   id,
   page,
+  fetchCategory,
   challengerCompleted
 }: TypeChallengerCompletedProps) => {
   const { results } = await fetchGet<TypeFetch<TypePlanet>>(
-    `${BASE_URL_API}/planets/?page=${page}&format=json`
+    `${BASE_URL_API}/${fetchCategory}/?page=${page}&format=json`
   )
 
   const { name } = results[Number(id)]
