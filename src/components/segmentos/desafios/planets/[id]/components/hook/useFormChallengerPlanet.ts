@@ -2,12 +2,10 @@ import {
   TypeSchemaFormFieldName,
   schemaFormFieldName
 } from '@/components/schema/schema-form-who-is'
-import { useContextChallengePersonCompleted } from '@/context/context-challenge-person-completed'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useId } from 'react'
 import { useForm } from 'react-hook-form'
 
-const useFormWhoIs = () => {
+const useFormChallengerPlanet = () => {
   const form = useForm<TypeSchemaFormFieldName>({
     mode: 'all',
     resolver: zodResolver(schemaFormFieldName),
@@ -16,11 +14,9 @@ const useFormWhoIs = () => {
     }
   })
 
-  const { setChallengeCompleted } = useContextChallengePersonCompleted()
-
-  const generateAccessibilityID = useId()
-
-  return { form, generateAccessibilityID, setChallengeCompleted }
+  return {
+    form
+  }
 }
 
-export default useFormWhoIs
+export default useFormChallengerPlanet

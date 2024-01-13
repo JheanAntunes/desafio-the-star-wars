@@ -1,11 +1,11 @@
 import * as z from 'zod'
 
-export const schemaFormWhoIs = z.object({
+export const schemaFormFieldName = z.object({
   name: z
     .string({
-      required_error: 'Por favor, Digite o nome dessa pessoa no campo'
+      required_error: 'Por favor, Digite o nome'
     })
-    .min(1, { message: 'Por favor, Digite o nome dessa pessoa no campo' })
+    .min(1, { message: 'Por favor, Digite o nome' })
 })
 
-export type TypeSchemaFormWhoIs = z.infer<typeof schemaFormWhoIs>
+export type TypeSchemaFormFieldName = z.infer<typeof schemaFormFieldName>
