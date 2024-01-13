@@ -5,10 +5,12 @@ import SubList from '../../../components/section-species/sub-list'
 
 type TypeDescriptionSubListFilmsProps = {
   urls: string[]
+  title: string
 }
 
 const DescriptionSubListFilms = async ({
-  urls
+  urls,
+  title
 }: TypeDescriptionSubListFilmsProps) => {
   const TitleFilms = await promiseAllFormatedDataDescriptionSubList<TypeFilms>({
     urls,
@@ -17,7 +19,7 @@ const DescriptionSubListFilms = async ({
 
   return (
     <TypographyListItem>
-      <TypographySmall> Filmes em que essa pessoa esteve:</TypographySmall>
+      <TypographySmall>{title} </TypographySmall>
       {TitleFilms && <SubList dataCaracteristicas={TitleFilms} />}
     </TypographyListItem>
   )
