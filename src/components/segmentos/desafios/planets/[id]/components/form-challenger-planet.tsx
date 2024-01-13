@@ -11,10 +11,10 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
-import useFormChallengerPlanet from './hook/useFormChallengerPlanet'
-import useGenerateAccessibilityID from './hook/useGenerateAccessibilityID'
-import useSearch from './hook/useSearch'
-import LogicFormChallengerPlanet from './logic/logic-form-challenger-planet'
+import useFormChallengerPlanet from '../../../../../hooks/useFormChallenger'
+import useGenerateAccessibilityID from '../../../../../hooks/useGenerateAccessibilityID'
+import useSearch from '../../../../../hooks/useSearch'
+import LogicFormChallengerPlanet from '../../../../../logic/logic-form-challenger'
 
 type TypeFormChallengerPlanetProps = {
   secretCaracteristica: string
@@ -30,7 +30,8 @@ const FormChallengerPlanet = ({
     secretCaracteristica,
     params,
     pathname,
-    replace
+    replace,
+    propertyCategory: 'challengerPlanets'
   })
 
   return (
