@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
 import SubList from '../../../components/section-species/sub-list'
 import ShorthandListItem from '../../../components/shorthand-list-item'
-import DesafioPersonDescriptionSubListFilms from '../../../person/[id]/components/desafio-person-description-sub-list-film'
+import DescriptionSubListFilms from '../../../person/[id]/components/description-sub-list-film'
 import DesafioPlanetDescriptionSubListResidents from './desafio-planets-description-subList-residents'
 
 type TypeDesafioPlanetDescriptionProps = {
@@ -104,7 +104,7 @@ const DesafioPlanetDescription = async ({
                 />
                 {films && films.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionSubListFilms urls={films} />
+                    <DescriptionSubListFilms urls={films} />
                   </Suspense>
                 )}
                 {residents && residents.length > 0 && (

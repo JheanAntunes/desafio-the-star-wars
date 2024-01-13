@@ -11,8 +11,8 @@ import ShorthandListItem from '../../../components/shorthand-list-item'
 import DesafioPersonDescriptionHomeWorld from './desafio-person-description-homeworld'
 import DesafioPersonDescriptionSubListSpecies from './desafio-person-description-species'
 import DesafioPersonDescriptionSubListStarships from './desafio-person-description-starships'
-import { default as DesafioPersonDescriptionSubListFilms } from './desafio-person-description-sub-list-film'
 import DesafioPersonDescriptionSubListVehicles from './desafio-person-description-vehicles'
+import DescriptionSubListFilms from './description-sub-list-film'
 
 type TypeDesafioPersonDescriptionProps = {
   id: string
@@ -106,7 +106,7 @@ const DesafioPersonDescription = async ({
                 )}
                 {films && films.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionSubListFilms urls={films} />
+                    <DescriptionSubListFilms urls={films} />
                   </Suspense>
                 )}
                 {species && species.length > 0 && (
