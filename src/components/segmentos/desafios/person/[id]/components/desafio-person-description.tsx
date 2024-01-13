@@ -106,7 +106,10 @@ const DesafioPersonDescription = async ({
                 )}
                 {films && films.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DescriptionSubListFilms urls={films} />
+                    <DescriptionSubListFilms
+                      urls={films}
+                      title="filmes em que essa pessoa esteve:"
+                    />
                   </Suspense>
                 )}
                 {species && species.length > 0 && (
