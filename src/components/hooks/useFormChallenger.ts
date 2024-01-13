@@ -5,7 +5,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-const useFormChallengerPlanet = () => {
+const useFormChallenger = () => {
   const form = useForm<TypeSchemaFormFieldName>({
     mode: 'all',
     resolver: zodResolver(schemaFormFieldName),
@@ -19,4 +19,4 @@ const useFormChallengerPlanet = () => {
   }
 }
 
-export default useFormChallengerPlanet
+export default useFormChallenger
