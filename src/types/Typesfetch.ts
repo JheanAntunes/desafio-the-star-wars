@@ -1,3 +1,11 @@
+export type TypeFetchCategory =
+  | 'person'
+  | 'planets'
+  | 'films'
+  | 'starships'
+  | 'vehicles'
+  | 'species'
+
 export type TypePerson = {
   name: string
   height: string
