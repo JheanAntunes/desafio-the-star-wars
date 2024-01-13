@@ -36,7 +36,7 @@ const DesafioPlanetDescription = async ({
   const NextDesafio = isNextIndex < results.length
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col pb-8">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <TypographyH2 className="order-2 md:order-1">Descrição</TypographyH2>
         {NextDesafio && (
@@ -51,7 +51,7 @@ const DesafioPlanetDescription = async ({
           </Link>
         )}
       </div>
-      <TypographyList className="my-2">
+      <TypographyList className="my-2 w-full max-w-3xl">
         {dataFormated.map(
           ({
             created,
@@ -104,7 +104,10 @@ const DesafioPlanetDescription = async ({
                 />
                 {films && films.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DescriptionSubListFilms urls={films} />
+                    <DescriptionSubListFilms
+                      urls={films}
+                      title="filmes nos quais este planeta apareceu:"
+                    />
                   </Suspense>
                 )}
                 {residents && residents.length > 0 && (
