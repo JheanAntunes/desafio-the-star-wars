@@ -6,7 +6,7 @@ type TypeUIChallengeCompleted = {
 }
 const UIChallengeCompleted = ({ name }: TypeUIChallengeCompleted) => {
   return (
-    <div className="grid grid-cols-1 gap-1">
+    <div className="mt-8 grid grid-cols-1 gap-1">
       <Badge
         className="w-fit animate-fade-down border-emerald-500 font-sans font-normal animate-delay-100 animate-duration-500 animate-once animate-ease-linear md:mx-auto"
         variant="outline"
