@@ -1,7 +1,7 @@
 import ChallengeCompletedFilm from '@/components/segmentos/desafios/films/[id]/components/challenge-completed-film'
 import DesafioFilmDescription from '@/components/segmentos/desafios/films/[id]/components/desafio-film-description'
 import { Skeleton } from '@/components/ui/skeleton'
-import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
+import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
 
 type TypeURLParams = {
@@ -32,7 +32,7 @@ const PageChallengeFilm = ({ params, searchParams }: TypePageChallengeFilm) => {
           challengerCompleted={challengerCompleted}
         />
       </Suspense>
-      <Suspense fallback={<SkeletonCategorias />}>
+      <Suspense fallback={<SkeletonDescription />}>
         <DesafioFilmDescription id={id} page={currentPage} />
       </Suspense>
     </main>

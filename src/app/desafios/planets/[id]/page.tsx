@@ -1,7 +1,7 @@
-import SkeletonDesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/skeletons/skeletonDesafioPersonDescription'
 import ChallengerCompletedPlanet from '@/components/segmentos/desafios/planets/[id]/components/challenger-completed-planet'
 import DesafioPlanetDescription from '@/components/segmentos/desafios/planets/[id]/components/desafio-planets-description'
 import { Skeleton } from '@/components/ui/skeleton'
+import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
 
 type TypeSearchParams = {
@@ -35,7 +35,7 @@ const PageDinamicaDesafioPlanet = ({
           challengerCompleted={challengerCompleted}
         />
       </Suspense>
-      <Suspense fallback={<SkeletonDesafioPersonDescription />}>
+      <Suspense fallback={<SkeletonDescription />}>
         <DesafioPlanetDescription id={id} page={currentPage} />
       </Suspense>
     </main>

@@ -1,7 +1,7 @@
 import DesafioPerson from '@/components/segmentos/desafios/person/[id]/components/desafio-person'
 import DesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/desafio-person-description'
-import SkeletonDesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/skeletons/skeletonDesafioPersonDescription'
 import { Skeleton } from '@/components/ui/skeleton'
+import SkeletonDesafioPersonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
 
 type TypeParams = {
