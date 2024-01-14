@@ -1,10 +1,10 @@
 import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
-import { TypeFetch, TypePlanet } from '@/types/Typesfetch'
+import { TypeFetch, TypeFilms } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { formatedString } from '@/utils/formated-string'
 import { Suspense } from 'react'
 import UIChallengeCompleted from '../../../components/ui-challenge-completed'
-import DesafioPlanets from './desafio-planets'
+import DesafioFilm from './desafio-film'
 
 type TypeChallengerCompletedProps = {
   id: string
@@ -12,29 +12,29 @@ type TypeChallengerCompletedProps = {
   challengerCompleted?: string
 }
 
-const ChallengerCompleted = async ({
+const ChallengeCompletedFilm = async ({
   id,
   page,
   challengerCompleted
 }: TypeChallengerCompletedProps) => {
-  const { results } = await fetchGet<TypeFetch<TypePlanet>>(
-    `${BASE_URL_API}/planets/?page=${page}&format=json`
+  const { results } = await fetchGet<TypeFetch<TypeFilms>>(
+    `${BASE_URL_API}/films/?page=${page}&format=json`
   )
 
-  const { name } = results[Number(id)]
+  const { title } = results[Number(id)]
 
   if (
     challengerCompleted &&
-    formatedString(challengerCompleted) === formatedString(name)
+    formatedString(challengerCompleted) === formatedString(title)
   ) {
     return <UIChallengeCompleted name={challengerCompleted} />
   }
 
   return (
     <Suspense fallback={<SkeletonCategorias />}>
-      <DesafioPlanets id={id} page={page} />
+      <DesafioFilm id={id} page={page} />
     </Suspense>
   )
 }
 
-export default ChallengerCompleted
+export default ChallengeCompletedFilm

@@ -1,4 +1,8 @@
 'use client'
+import useFormChallenger from '@/components/hooks/useFormChallenger'
+import useGenerateAccessibilityID from '@/components/hooks/useGenerateAccessibilityID'
+import useSearch from '@/components/hooks/useSearch'
+import LogicFormChallenger from '@/components/logic/logic-form-challenger'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -11,27 +15,23 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
-import useFormChallengerPlanet from '../../../../../hooks/useFormChallenger'
-import useGenerateAccessibilityID from '../../../../../hooks/useGenerateAccessibilityID'
-import useSearch from '../../../../../hooks/useSearch'
-import LogicFormChallengerPlanet from '../../../../../logic/logic-form-challenger'
 
-type TypeFormChallengerPlanetProps = {
+type TypeFormChallengerProps = {
   secretCaracteristica: string
 }
 
-const FormChallengerPlanet = ({
+const FormChallengeFilm = ({
   secretCaracteristica
-}: TypeFormChallengerPlanetProps) => {
-  const { form } = useFormChallengerPlanet()
+}: TypeFormChallengerProps) => {
+  const { form } = useFormChallenger()
   const { generateAccessibilityID } = useGenerateAccessibilityID()
   const { params, pathname, replace } = useSearch()
-  const { formValidatedSuccessfully } = LogicFormChallengerPlanet({
+  const { formValidatedSuccessfully } = LogicFormChallenger({
     secretCaracteristica,
     params,
     pathname,
     replace,
-    propertyCategory: 'challengerPlanets'
+    propertyCategory: 'challengerFilms'
   })
 
   return (
@@ -45,11 +45,13 @@ const FormChallengerPlanet = ({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor={generateAccessibilityID}>Nome:</FormLabel>
+              <FormLabel htmlFor={generateAccessibilityID}>
+                Nome do título:
+              </FormLabel>
               <FormControl>
                 <Input
                   id={generateAccessibilityID}
-                  placeholder="Nome do planeta ?"
+                  placeholder="Nome do Título deste filme ?"
                   {...field}
                   className={cn(
                     'bg-transparent',
@@ -57,7 +59,10 @@ const FormChallengerPlanet = ({
                   )}
                 />
               </FormControl>
-              <FormDescription> Qual é o nome deste planeta ?</FormDescription>
+              <FormDescription>
+                {' '}
+                Qual é o nome do título deste filme ?
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -70,4 +75,4 @@ const FormChallengerPlanet = ({
   )
 }
 
-export default FormChallengerPlanet
+export default FormChallengeFilm

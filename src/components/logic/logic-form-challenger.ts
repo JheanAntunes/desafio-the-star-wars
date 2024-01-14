@@ -1,4 +1,5 @@
 import { TypeSchemaFormFieldName } from '@/components/schema/schema-form-who-is'
+import { TypeDataStorageChallenger } from '@/types/TypeLocalStorage'
 import { formatedString } from '@/utils/formated-string'
 import logicLocalStorageDataChallenger from '@/utils/logic-localStorage-data-challenger'
 import ToastCompletedChallenger from '@/utils/toast-completed-challenger'
@@ -6,18 +7,20 @@ import ToastFailedChallenger from '@/utils/toast-failed-challenger'
 import { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 import { SubmitHandler } from 'react-hook-form'
 
-type TypeLogicFormChallengerPlanet = {
+type TypeLogicFormChallenger = {
   secretCaracteristica: string
   params: URLSearchParams
   pathname: string
   replace: (href: string, options?: NavigateOptions | undefined) => void
+  propertyCategory: keyof TypeDataStorageChallenger
 }
-const LogicFormChallengerPlanet = ({
+const LogicFormChallenger = ({
   secretCaracteristica,
   params,
   pathname,
-  replace
-}: TypeLogicFormChallengerPlanet) => {
+  replace,
+  propertyCategory
+}: TypeLogicFormChallenger) => {
   const formValidatedSuccessfully: SubmitHandler<TypeSchemaFormFieldName> = (
     dataForm
   ) => {
@@ -31,7 +34,7 @@ const LogicFormChallengerPlanet = ({
       logicLocalStorageDataChallenger({
         storageChave: 'storageChallenger',
         storageValue: formatedString(dataForm.name),
-        propertyAddValue: 'challengerPlanets'
+        propertyAddValue: propertyCategory
       })
 
       // gererenciamento de desafio completado pela url:
@@ -48,4 +51,4 @@ const LogicFormChallengerPlanet = ({
   }
 }
 
-export default LogicFormChallengerPlanet
+export default LogicFormChallenger

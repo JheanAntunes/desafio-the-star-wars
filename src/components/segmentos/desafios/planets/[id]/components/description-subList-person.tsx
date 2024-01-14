@@ -3,13 +3,15 @@ import { TypePerson } from '@/types/Typesfetch'
 import promiseAllFormatedDataDescriptionSubList from '@/utils/promiseAll-formated-data-description-sub-list'
 import SubList from '../../../components/section-species/sub-list'
 
-type TypeDesafioPlanetDescriptionSubListResidentsProps = {
+type TypeDescriptionSubListPersonProps = {
   urls: string[]
+  title: string
 }
 
-const DesafioPlanetDescriptionSubListResidents = async ({
-  urls
-}: TypeDesafioPlanetDescriptionSubListResidentsProps) => {
+const DescriptionSubListPerson = async ({
+  urls,
+  title
+}: TypeDescriptionSubListPersonProps) => {
   const residents = await promiseAllFormatedDataDescriptionSubList<TypePerson>({
     urls,
     chave: 'name'
@@ -17,10 +19,10 @@ const DesafioPlanetDescriptionSubListResidents = async ({
 
   return (
     <TypographyListItem>
-      <TypographySmall> Pessoas que vivem neste planeta:</TypographySmall>
+      <TypographySmall>{title}</TypographySmall>
       {residents && <SubList dataCaracteristicas={residents} />}
     </TypographyListItem>
   )
 }
 
-export default DesafioPlanetDescriptionSubListResidents
+export default DescriptionSubListPerson
