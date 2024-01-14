@@ -1,6 +1,6 @@
 import SkeletonList from '@/components/ui/skeletons/skeleton-list'
 
-const SkeletonDesafioPersonDescription = () => {
+const SkeletonDescription = () => {
   return (
     <div className="grid grid-cols-1 gap-8">
       <SkeletonList />
@@ -11,4 +11,4 @@ const SkeletonDesafioPersonDescription = () => {
   )
 }
 
-export default SkeletonDesafioPersonDescription
+export default SkeletonDescription
