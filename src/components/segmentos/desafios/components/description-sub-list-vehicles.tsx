@@ -1,15 +1,17 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeVehicle } from '@/types/Typesfetch'
 import promiseAllFormatedDataDescriptionSubList from '@/utils/promiseAll-formated-data-description-sub-list'
-import SubList from '../../../components/section-species/sub-list'
+import SubList from './section-species/sub-list'
 
-type TypeDesafioPersonDescriptionSubListVehiclesProps = {
+type TypeDescriptionSubListVehiclesProps = {
   urls: string[]
+  title: string
 }
 
-const DesafioPersonDescriptionSubListVehicles = async ({
-  urls
-}: TypeDesafioPersonDescriptionSubListVehiclesProps) => {
+const DescriptionSubListVehicles = async ({
+  urls,
+  title
+}: TypeDescriptionSubListVehiclesProps) => {
   const arrayNamesOfSpecies =
     await promiseAllFormatedDataDescriptionSubList<TypeVehicle>({
       chave: 'name',
@@ -18,7 +20,7 @@ const DesafioPersonDescriptionSubListVehicles = async ({
 
   return (
     <TypographyListItem>
-      <TypographySmall> Veículos que essa pessoa pilotou:</TypographySmall>
+      <TypographySmall>{title}</TypographySmall>
       {arrayNamesOfSpecies && (
         <SubList dataCaracteristicas={arrayNamesOfSpecies} />
       )}
@@ -26,4 +28,4 @@ const DesafioPersonDescriptionSubListVehicles = async ({
   )
 }
 
-export default DesafioPersonDescriptionSubListVehicles
+export default DescriptionSubListVehicles
