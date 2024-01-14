@@ -85,7 +85,9 @@ const DesafioFilmDescription = async ({
                   caracteristica={director}
                 />
                 <TypographyListItem>
-                  O(s) nome(s) do(s) produtor(es) deste filme:
+                  <TypographySmall>
+                    O(s) nome(s) do(s) produtor(es) deste filme:
+                  </TypographySmall>
                   <SubList dataCaracteristicas={producer.split(',')} />
                 </TypographyListItem>
                 <ShorthandListItem
