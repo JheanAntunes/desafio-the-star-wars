@@ -1,24 +1,24 @@
-import { TypeFetch, TypeFetchCategory, TypePlanet } from '@/types/Typesfetch'
+import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
+import { TypeFetch, TypePlanet } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { formatedString } from '@/utils/formated-string'
+import { Suspense } from 'react'
 import UIChallengeCompleted from '../../../components/ui-challenge-completed'
+import DesafioPlanets from './desafio-planets'
 
 type TypeChallengerCompletedProps = {
   id: string
   page: string
   challengerCompleted?: string
-  fetchCategory: TypeFetchCategory
-} & React.PropsWithChildren
+}
 
-const ChallengerCompleted = async ({
+const ChallengerCompletedPlanet = async ({
   id,
   page,
-  fetchCategory,
-  challengerCompleted,
-  children
+  challengerCompleted
 }: TypeChallengerCompletedProps) => {
   const { results } = await fetchGet<TypeFetch<TypePlanet>>(
-    `${BASE_URL_API}/${fetchCategory}/?page=${page}&format=json`
+    `${BASE_URL_API}/planets/?page=${page}&format=json`
   )
 
   const { name } = results[Number(id)]
@@ -30,7 +30,11 @@ const ChallengerCompleted = async ({
     return <UIChallengeCompleted name={challengerCompleted} />
   }
 
-  return <>{children}</>
+  return (
+    <Suspense fallback={<SkeletonCategorias />}>
+      <DesafioPlanets id={id} page={page} />
+    </Suspense>
+  )
 }
 
-export default ChallengerCompleted
+export default ChallengerCompletedPlanet
