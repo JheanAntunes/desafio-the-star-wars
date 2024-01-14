@@ -11,10 +11,10 @@ import { modifying_data_Planet_improve_UI } from '@/utils/modiying_data_improve_
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
+import DescriptionSubListFilms from '../../../components/description-sub-list-film'
 import SubList from '../../../components/section-species/sub-list'
 import ShorthandListItem from '../../../components/shorthand-list-item'
-import DescriptionSubListFilms from '../../../person/[id]/components/description-sub-list-film'
-import DesafioPlanetDescriptionSubListResidents from './desafio-planets-description-subList-residents'
+import DescriptionSubListPerson from './description-subList-person'
 
 type TypeDesafioPlanetDescriptionProps = {
   id: string
@@ -112,8 +112,9 @@ const DesafioPlanetDescription = async ({
                 )}
                 {residents && residents.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPlanetDescriptionSubListResidents
+                    <DescriptionSubListPerson
                       urls={residents}
+                      title="Pessoas que vivem neste planeta:"
                     />
                   </Suspense>
                 )}
