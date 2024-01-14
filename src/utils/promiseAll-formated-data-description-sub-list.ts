@@ -1,6 +1,7 @@
 import {
   TypeFilms,
   TypePerson,
+  TypePlanet,
   TypeSpecies,
   TypeStarships,
   TypeVehicle
@@ -20,6 +21,7 @@ type TypeGenericsPromiseAllFormatedDataDescriptionSubList =
   | TypeFilms
   | TypeSpecies
   | TypeStarships
+  | TypePlanet
 
 const promiseAllFormatedDataDescriptionSubList = async <
   T extends TypeGenericsPromiseAllFormatedDataDescriptionSubList
