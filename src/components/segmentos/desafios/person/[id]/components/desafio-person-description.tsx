@@ -7,12 +7,12 @@ import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
+import DescriptionSubListFilms from '../../../components/description-sub-list-film'
+import DescriptionSubListSpecies from '../../../components/description-sub-list-species'
+import DescriptionSubListStarships from '../../../components/description-sub-list-starships'
+import DescriptionSubListVehicles from '../../../components/description-sub-list-vehicles'
 import ShorthandListItem from '../../../components/shorthand-list-item'
-import DesafioPersonDescriptionHomeWorld from './desafio-person-description-homeworld'
-import DesafioPersonDescriptionSubListSpecies from './desafio-person-description-species'
-import DesafioPersonDescriptionSubListStarships from './desafio-person-description-starships'
-import DesafioPersonDescriptionSubListVehicles from './desafio-person-description-vehicles'
-import DescriptionSubListFilms from './description-sub-list-film'
+import DescriptionHomeWorld from './description-homeworld'
 
 type TypeDesafioPersonDescriptionProps = {
   id: string
@@ -101,7 +101,7 @@ const DesafioPersonDescription = async ({
                 />
                 {homeworld && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionHomeWorld homeworld={homeworld} />
+                    <DescriptionHomeWorld homeworld={homeworld} />
                   </Suspense>
                 )}
                 {films && films.length > 0 && (
@@ -114,19 +114,26 @@ const DesafioPersonDescription = async ({
                 )}
                 {species && species.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionSubListSpecies urls={species} />
+                    <DescriptionSubListSpecies
+                      urls={species}
+                      title="Espécies às quais esta pessoa pertence:"
+                    />
                   </Suspense>
                 )}
                 {starships && starships.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionSubListStarships
+                    <DescriptionSubListStarships
                       urls={starships}
+                      title="Naves estelares que esta pessoa pilotou:"
                     />
                   </Suspense>
                 )}
                 {vehicles && vehicles.length > 0 && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DesafioPersonDescriptionSubListVehicles urls={vehicles} />
+                    <DescriptionSubListVehicles
+                      urls={vehicles}
+                      title="Veículos que essa pessoa pilotou:"
+                    />
                   </Suspense>
                 )}
               </Fragment>
