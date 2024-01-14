@@ -42,7 +42,7 @@ const DesafioFilmDescription = async ({
   const NextDesafio = isNextIndex < results.length
 
   return (
-    <section className="flex flex-col pb-8">
+    <section className="mt-8 flex flex-col">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <TypographyH2 className="order-2 md:order-1">Descrição</TypographyH2>
         {NextDesafio && (
