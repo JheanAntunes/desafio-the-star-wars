@@ -20,10 +20,10 @@ const DesafioFilm = async ({ id, page }: TypeDesafioFilm) => {
   const dataFilm = results[Number(id)]
 
   return (
-    <div className="mt-8 flex flex-col gap-8">
+    <div className="flex flex-col gap-8">
       <div className="text-center">
         <TypographyH1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-          Desafio de Filme
+          Desafio de Filsme
         </TypographyH1>
         <TypographyP>
           Você precisa adivinhar o nome do Título deste Filme.
