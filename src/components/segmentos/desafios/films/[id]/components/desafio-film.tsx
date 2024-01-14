@@ -23,7 +23,7 @@ const DesafioFilm = async ({ id, page }: TypeDesafioFilm) => {
     <div className="flex flex-col gap-8">
       <div className="text-center">
         <TypographyH1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-          Desafio de Filsme
+          Desafio de Filme
         </TypographyH1>
         <TypographyP>
           Você precisa adivinhar o nome do Título deste Filme.
