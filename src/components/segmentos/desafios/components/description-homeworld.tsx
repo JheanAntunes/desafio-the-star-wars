@@ -4,16 +4,19 @@ import { fetchGet } from '@/utils/fetch'
 
 type TypeDescriptionHomeWorldProps = {
   homeworld: string
+  title: string
 }
 
 const DescriptionHomeWorld = async ({
-  homeworld
+  homeworld,
+  title
 }: TypeDescriptionHomeWorldProps) => {
   const { name } = await fetchGet<TypePlanet>(homeworld)
 
   return (
     <TypographyListItem className="text-sm font-medium leading-none text-zinc-900">
-      um planeta onde esta pessoa nasceu ou habita: {name}
+      {title}
+      {name}
     </TypographyListItem>
   )
 }
