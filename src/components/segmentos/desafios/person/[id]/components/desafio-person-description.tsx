@@ -7,12 +7,12 @@ import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
+import DescriptionHomeWorld from '../../../components/description-homeworld'
 import DescriptionSubListFilms from '../../../components/description-sub-list-film'
 import DescriptionSubListSpecies from '../../../components/description-sub-list-species'
 import DescriptionSubListStarships from '../../../components/description-sub-list-starships'
 import DescriptionSubListVehicles from '../../../components/description-sub-list-vehicles'
 import ShorthandListItem from '../../../components/shorthand-list-item'
-import DescriptionHomeWorld from './description-homeworld'
 
 type TypeDesafioPersonDescriptionProps = {
   id: string
@@ -101,7 +101,10 @@ const DesafioPersonDescription = async ({
                 />
                 {homeworld && (
                   <Suspense fallback={<SkeletonList />}>
-                    <DescriptionHomeWorld homeworld={homeworld} />
+                    <DescriptionHomeWorld
+                      homeworld={homeworld}
+                      title="um planeta onde esta pessoa nasceu ou habita:"
+                    />
                   </Suspense>
                 )}
                 {films && films.length > 0 && (
