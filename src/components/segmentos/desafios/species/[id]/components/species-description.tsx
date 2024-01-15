@@ -104,7 +104,7 @@ const SpeciesDescription = async ({
                   <SubList dataCaracteristicas={skin_colors.split(',')} />
                 </TypographyListItem>
                 {homeworld && (
-                  <Suspense fallback={<Skeleton />}>
+                  <Suspense fallback={<Skeleton className="h-3 w-full" />}>
                     <DescriptionHomeWorld
                       homeworld={homeworld}
                       title="Um planeta de origem desta espécie: "
