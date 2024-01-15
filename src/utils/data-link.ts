@@ -36,16 +36,20 @@ export const dataLinksDocs: TypeDataLinks[] = [
     content: 'Pessoas'
   },
   {
-    href: '/docs/planet',
-    content: 'Planeta'
+    href: '/docs/planets',
+    content: 'Planetas'
+  },
+  {
+    href: '/docs/films',
+    content: 'Filmes'
   },
   {
     href: '/docs/starships',
     content: 'Nave Estelares'
   },
   {
-    href: '/docs/vehicle',
-    content: 'Veículo'
+    href: '/docs/vehicles',
+    content: 'Veículos'
   },
   {
     href: '/docs/species',
