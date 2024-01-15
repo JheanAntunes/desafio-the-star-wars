@@ -1,6 +1,7 @@
 import { TypeFetch, TypeFilms } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Films_improve_UI } from '@/utils/modiying_data_improve_ui'
+import Link from 'next/link'
 import { Fragment } from 'react'
 import FilmCard from './film-card'
 
@@ -15,9 +16,14 @@ const FilmsCards = async ({ page }: TypeFilmsCardsProps) => {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {/* Grid */}
-      {dataFormatedImproveUi.map((dataFilm) => (
+      {dataFormatedImproveUi.map((dataFilm, index) => (
         <Fragment key={dataFilm.created + dataFilm.edited}>
-          <FilmCard {...dataFilm} />
+          <Link
+            className="group"
+            href={`/desafios/films/${index}?page=${page ?? 1}`}
+          >
+            <FilmCard {...dataFilm} />
+          </Link>
         </Fragment>
       ))}
     </div>
