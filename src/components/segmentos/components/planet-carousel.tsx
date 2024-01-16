@@ -2,11 +2,11 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import { LogicPlanetCarousel } from '../../logic/logic-planet-carousel'
 import PlanetCard from '../desafios/planets/components/planet-card'
-import { TypeCarouselSegmento } from '../types/carousel-segmento'
+import { TypeSegmento } from '../types/segmento'
 import ShorthandCarousel from './shorthand-carousel'
 
 type TypePlanetCarouselProps = {
-  segmento: TypeCarouselSegmento
+  segmento: TypeSegmento
 }
 async function PlanetCarousel({ segmento }: TypePlanetCarouselProps) {
   const { data_improved_UI } = await LogicPlanetCarousel()

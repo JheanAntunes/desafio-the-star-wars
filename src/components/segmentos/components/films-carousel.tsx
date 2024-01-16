@@ -2,11 +2,11 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import LogicFilmsCarousel from '../../logic/logic-films-carousel'
 import FilmCard from '../desafios/films/components/film-card'
-import { TypeCarouselSegmento } from '../types/carousel-segmento'
+import { TypeSegmento } from '../types/segmento'
 import ShorthandCarousel from './shorthand-carousel'
 
 type TypeFilmsCarouselProps = {
-  segmento: TypeCarouselSegmento
+  segmento: TypeSegmento
 }
 async function FilmsCarousel({ segmento }: TypeFilmsCarouselProps) {
   const { data_Improved_UI } = await LogicFilmsCarousel()

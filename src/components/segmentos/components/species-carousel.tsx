@@ -2,11 +2,11 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import { LogicSpeciesCarousel } from '../../logic/logic-species-carousel'
 import SpeciesCard from '../desafios/species/components/species-card'
-import { TypeCarouselSegmento } from '../types/carousel-segmento'
+import { TypeSegmento } from '../types/segmento'
 import ShorthandCarousel from './shorthand-carousel'
 
 type TypeSpeciesCarouselProps = {
-  segmento: TypeCarouselSegmento
+  segmento: TypeSegmento
 }
 
 async function SpeciesCarousel({ segmento }: TypeSpeciesCarouselProps) {

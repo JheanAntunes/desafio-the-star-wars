@@ -3,10 +3,10 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import { LogicVehiclesCarousel } from '../../logic/logic-vehicles-carousel'
 import VehiclesCard from '../desafios/vehicles/components/vehicles-card'
-import { TypeCarouselSegmento } from '../types/carousel-segmento'
+import { TypeSegmento } from '../types/segmento'
 
 type TypeVehiclesCarouselProps = {
-  segmento: TypeCarouselSegmento
+  segmento: TypeSegmento
 }
 
 async function VehiclesCarousel({ segmento }: TypeVehiclesCarouselProps) {

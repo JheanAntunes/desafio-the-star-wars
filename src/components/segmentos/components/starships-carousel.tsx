@@ -2,11 +2,11 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import LogicCarouselStarships from '../../logic/logic-starship-carousel-starships'
 import StarshipsCard from '../desafios/starships/components/starships-card'
-import { TypeCarouselSegmento } from '../types/carousel-segmento'
+import { TypeSegmento } from '../types/segmento'
 import ShorthandCarousel from './shorthand-carousel'
 
 type TypeStarshipsCarouselProps = {
-  segmento: TypeCarouselSegmento
+  segmento: TypeSegmento
 }
 
 async function StarshipsCarousel({ segmento }: TypeStarshipsCarouselProps) {
