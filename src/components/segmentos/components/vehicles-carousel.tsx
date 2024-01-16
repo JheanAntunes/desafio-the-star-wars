@@ -2,7 +2,7 @@ import ShorthandCarousel from '@/components/segmentos/components/shorthand-carou
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import VehiclesCard from '../desafios/vehicles/components/vehicles-card'
-import { LogicVehiclesCarousel } from '../logic/logic-vehicles-carousel'
+import { LogicVehiclesCarousel } from '../../logic/logic-vehicles-carousel'
 
 async function VehiclesCarousel() {
   const { data_improved_UI } = await LogicVehiclesCarousel()

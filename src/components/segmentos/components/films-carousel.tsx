@@ -1,7 +1,7 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import FilmCard from '../desafios/films/components/film-card'
-import LogicFilmsCarousel from '../logic/logic-films-carousel'
+import LogicFilmsCarousel from '../../logic/logic-films-carousel'
 import ShorthandCarousel from './shorthand-carousel'
 
 async function FilmsCarousel() {

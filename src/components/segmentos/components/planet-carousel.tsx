@@ -1,7 +1,7 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import PlanetCard from '../desafios/planets/components/planet-card'
-import { LogicPlanetCarousel } from '../logic/logic-planet-carousel'
+import { LogicPlanetCarousel } from '../../logic/logic-planet-carousel'
 import ShorthandCarousel from './shorthand-carousel'
 
 async function PlanetCarousel() {

@@ -1,7 +1,7 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import StarshipsCard from '../desafios/starships/components/starships-card'
-import LogicCarouselStarships from '../logic/logic-starship-carousel-starships'
+import LogicCarouselStarships from '../../logic/logic-starship-carousel-starships'
 import ShorthandCarousel from './shorthand-carousel'
 
 async function StarshipsCarousel() {

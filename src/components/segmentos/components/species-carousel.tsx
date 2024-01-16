@@ -1,7 +1,7 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import SpeciesCard from '../desafios/species/components/species-card'
-import { LogicSpeciesCarousel } from '../logic/logic-species-carousel'
+import { LogicSpeciesCarousel } from '../../logic/logic-species-carousel'
 import ShorthandCarousel from './shorthand-carousel'
 
 async function SpeciesCarousel() {
