@@ -25,7 +25,7 @@ function PagePersonDesafio({
         <PersonCards page={page} segmento="desafios" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
-        <PersonPagination page={page} />
+        <PersonPagination page={page} segmento="desafios" />
       </Suspense>
     </main>
   )
