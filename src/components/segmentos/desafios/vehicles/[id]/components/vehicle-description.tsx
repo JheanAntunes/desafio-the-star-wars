@@ -6,7 +6,7 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_VEHICLES_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListVehicle from '../../../components/list-vehicle'
+import ListVehicle from '../../../../components/list-vehicle'
 
 type TypeVehicleDescriptionProps = {
   id: string

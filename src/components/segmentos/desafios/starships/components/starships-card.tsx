@@ -4,7 +4,7 @@ import { TypographyList } from '@/components/ui/typography'
 import { TypeStarships } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
 import Image from 'next/image'
-import ShorthandListItem from '../../components/shorthand-list-item'
+import ShorthandListItem from '../../../components/shorthand-list-item'
 
 const StarshipsCard = ({
   model,

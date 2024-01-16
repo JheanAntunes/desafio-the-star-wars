@@ -20,7 +20,7 @@ function CategoriaDesafios() {
   return (
     <>
       <CategoriaContainer>
-        <div className="flex file:gap-1">
+        <div className="flex gap-1">
           <CategoriaTitle>Categorias de Desafios</CategoriaTitle>
           <div className="relative h-10 w-10 overflow-hidden">
             <Image

@@ -10,7 +10,7 @@ type TypeCategoriaActiveLinkProps = {
   dataLinks: TypeDataLinks[]
 }
 
-export default function CategoriaDesafiosDropdownMenuItems({
+export default function CategoriaDropdownMenuItems({
   dataLinks
 }: TypeCategoriaActiveLinkProps) {
   const { activeLink } = useActiveLinkPathname()

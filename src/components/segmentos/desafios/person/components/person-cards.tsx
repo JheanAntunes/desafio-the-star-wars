@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
@@ -6,8 +7,9 @@ import PersonCard from './PersonCard'
 
 type TypePersonCardsProps = {
   page?: string
+  segmento: TypeSegmento
 }
-const PersonCards = async ({ page }: TypePersonCardsProps) => {
+const PersonCards = async ({ page, segmento }: TypePersonCardsProps) => {
   const currentPage = page ?? 1
 
   const { results } = await fetchGet<TypeFetch<TypePerson>>(
@@ -21,10 +23,10 @@ const PersonCards = async ({ page }: TypePersonCardsProps) => {
       {dataFormatedImproveUi.map((dataPerson, index) => (
         <Link
           className="group"
-          href={`/desafios/person/${index}?page=${currentPage}`}
+          href={`/${segmento}/person/${index}?page=${currentPage}`}
           key={dataPerson.created + dataPerson.hair_color}
         >
-          <PersonCard dataFormatedImproveUi={dataPerson} />
+          <PersonCard dataFormatedImproveUi={dataPerson} segmento={segmento} />
         </Link>
       ))}
     </div>

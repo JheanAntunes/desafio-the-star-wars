@@ -22,7 +22,7 @@ function PagePersonDesafio({
         <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
       </div>
       <Suspense fallback={<SkeletonCards />}>
-        <PersonCards page={page} />
+        <PersonCards page={page} segmento="desafios" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
         <PersonPagination page={page} />

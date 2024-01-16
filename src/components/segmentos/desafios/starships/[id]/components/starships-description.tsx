@@ -6,7 +6,7 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_STARSHIPS_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListStarship from '../../../components/list-starship'
+import ListStarship from '../../../../components/list-starship'
 
 type TypeStarshipsDescriptionProps = {
   id: string
