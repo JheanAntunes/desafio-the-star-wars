@@ -1,3 +1,4 @@
+import { CardTitle } from '@/components/ui/card'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
@@ -24,7 +25,11 @@ const PersonCards = async ({ page }: TypePersonCardsProps) => {
           href={`/desafios/person/${index}?page=${currentPage}`}
           key={dataPerson.created + dataPerson.hair_color}
         >
-          <PersonCard dataFormatedImproveUi={dataPerson} />
+          <PersonCard dataFormatedImproveUi={dataPerson}>
+            <CardTitle className="font-sans font-normal transition-colors group-hover:text-blue-500">
+              Desafio
+            </CardTitle>
+          </PersonCard>
         </Link>
       ))}
     </div>
