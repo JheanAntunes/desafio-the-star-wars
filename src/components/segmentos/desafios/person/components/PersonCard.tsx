@@ -1,5 +1,5 @@
 import EspadaLuz from '@/components/assets/espada-luz.png'
-import ShorthandListItem from '@/components/segmentos/desafios/components/shorthand-list-item'
+import ShorthandListItem from '@/components/segmentos/components/shorthand-list-item'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { TypographyList } from '@/components/ui/typography'
 import { TypePerson } from '@/types/Typesfetch'

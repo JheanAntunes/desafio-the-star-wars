@@ -3,10 +3,10 @@ import { TypographyList, TypographyListItem } from '@/components/ui/typography'
 import { TypeVehicle } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
 import { Fragment, Suspense } from 'react'
-import DescriptionSubListPerson from '../planets/[id]/components/description-subList-person'
+import DescriptionSubListPerson from '../desafios/planets/[id]/components/description-subList-person'
 import DescriptionSubListFilms from './description-sub-list-film'
-import SubList from './sub-list'
 import ShorthandListItem from './shorthand-list-item'
+import SubList from './sub-list'
 
 type TypeListVehicleProps = {
   dataVehicle: TypeVehicle[]

@@ -6,7 +6,7 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_SPECIES_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListSpecies from '../../../components/list-species'
+import ListSpecies from '../../../../components/list-species'
 
 type TypeSpeciesDescriptionProps = {
   id: string

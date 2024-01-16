@@ -7,8 +7,8 @@ import {
 } from '@/components/ui/typography'
 import { TypeFilms } from '@/types/Typesfetch'
 import Image from 'next/image'
-import SubList from '../../components/sub-list'
-import ShorthandListItem from '../../components/shorthand-list-item'
+import ShorthandListItem from '../../../components/shorthand-list-item'
+import SubList from '../../../components/sub-list'
 
 const FilmCard = ({ director, producer, episode_id }: TypeFilms) => {
   return (

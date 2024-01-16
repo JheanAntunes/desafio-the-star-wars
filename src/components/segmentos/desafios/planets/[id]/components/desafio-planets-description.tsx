@@ -6,7 +6,7 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Planet_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListPlanet from '../../../components/list-planet'
+import ListPlanet from '../../../../components/list-planet'
 
 type TypeDesafioPlanetDescriptionProps = {
   id: string

@@ -3,11 +3,11 @@ import SkeletonList from '@/components/ui/skeletons/skeleton-list'
 import { TypographyList, TypographyListItem } from '@/components/ui/typography'
 import { TypeSpecies } from '@/types/Typesfetch'
 import { Fragment, Suspense } from 'react'
-import DescriptionSubListPerson from '../planets/[id]/components/description-subList-person'
+import DescriptionSubListPerson from '../desafios/planets/[id]/components/description-subList-person'
 import DescriptionHomeWorld from './description-homeworld'
 import DescriptionSubListFilms from './description-sub-list-film'
-import SubList from './sub-list'
 import ShorthandListItem from './shorthand-list-item'
+import SubList from './sub-list'
 
 type TypeListSpeciesProps = {
   dataSpecie: TypeSpecies[]
