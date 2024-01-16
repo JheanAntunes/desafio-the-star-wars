@@ -9,7 +9,7 @@ function SectionDesafioSpecies() {
         <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionSpeciesDesafioCarousel />
+        <SectionSpeciesDesafioCarousel segmento="desafios" />
       </div>
     </section>
   )

@@ -9,7 +9,7 @@ function SectionDesafioStarships() {
         <TypographyP>Clique nso desafio abaixo para começar.</TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionStarshipsDesafioCarousel />
+        <SectionStarshipsDesafioCarousel segmento="desafios" />
       </div>
     </section>
   )

@@ -9,7 +9,7 @@ function SectionDesafioPlanet() {
         <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionPlanetDesafioCarousel />
+        <SectionPlanetDesafioCarousel segmento="desafios" />
       </div>
     </section>
   )
