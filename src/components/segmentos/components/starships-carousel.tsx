@@ -2,12 +2,12 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import StarshipsCard from '../desafios/starships/components/starships-card'
 import LogicCarouselStarships from '../logic/logic-starship-carousel-starships'
-import SectionCarousel from './shorthand-carousel'
+import ShorthandCarousel from './shorthand-carousel'
 
-async function SectionStarshipsCarousel() {
+async function StarshipsCarousel() {
   const { data_improved_UI } = await LogicCarouselStarships()
   return (
-    <SectionCarousel>
+    <ShorthandCarousel>
       {data_improved_UI.map((dataStarship, index) => (
         <CarouselItem
           key={dataStarship.created + dataStarship.MGLT}
@@ -18,8 +18,8 @@ async function SectionStarshipsCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionCarousel>
+    </ShorthandCarousel>
   )
 }
 
-export default SectionStarshipsCarousel
+export default StarshipsCarousel

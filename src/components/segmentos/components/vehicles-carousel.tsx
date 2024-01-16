@@ -1,13 +1,13 @@
-import SectionCarousel from '@/components/segmentos/components/shorthand-carousel'
+import ShorthandCarousel from '@/components/segmentos/components/shorthand-carousel'
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import VehiclesCard from '../desafios/vehicles/components/vehicles-card'
 import { LogicVehiclesCarousel } from '../logic/logic-vehicles-carousel'
 
-async function SectionVehiclesCarousel() {
+async function VehiclesCarousel() {
   const { data_improved_UI } = await LogicVehiclesCarousel()
   return (
-    <SectionCarousel>
+    <ShorthandCarousel>
       {data_improved_UI.map((dataVehicle, index) => (
         <CarouselItem
           key={dataVehicle.created}
@@ -18,8 +18,8 @@ async function SectionVehiclesCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionCarousel>
+    </ShorthandCarousel>
   )
 }
 
-export default SectionVehiclesCarousel
+export default VehiclesCarousel

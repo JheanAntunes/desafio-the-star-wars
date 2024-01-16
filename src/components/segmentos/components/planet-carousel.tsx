@@ -1,13 +1,13 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import PlanetCard from '../desafios/planets/components/planet-card'
-import { LogicPlanetCarousel } from '../logic/logic-desafio-planet-carousel'
-import SectionDesafioCarousel from './shorthand-carousel'
+import { LogicPlanetCarousel } from '../logic/logic-planet-carousel'
+import ShorthandCarousel from './shorthand-carousel'
 
-async function SectionPlanetCarousel() {
+async function PlanetCarousel() {
   const { data_improved_UI } = await LogicPlanetCarousel()
   return (
-    <SectionDesafioCarousel>
+    <ShorthandCarousel>
       {data_improved_UI.map((dataPlanet, index) => (
         <CarouselItem
           key={dataPlanet.created + dataPlanet.climate}
@@ -18,8 +18,8 @@ async function SectionPlanetCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionDesafioCarousel>
+    </ShorthandCarousel>
   )
 }
 
-export default SectionPlanetCarousel
+export default PlanetCarousel

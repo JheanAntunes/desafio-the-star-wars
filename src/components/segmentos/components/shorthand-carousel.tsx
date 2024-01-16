@@ -5,7 +5,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel'
 
-function SectionCarousel({ children }: React.PropsWithChildren) {
+function ShorthandCarousel({ children }: React.PropsWithChildren) {
   return (
     <Carousel
       opts={{
@@ -20,4 +20,4 @@ function SectionCarousel({ children }: React.PropsWithChildren) {
   )
 }
 
-export default SectionCarousel
+export default ShorthandCarousel

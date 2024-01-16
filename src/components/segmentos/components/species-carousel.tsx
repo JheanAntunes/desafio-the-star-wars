@@ -2,12 +2,12 @@ import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 import SpeciesCard from '../desafios/species/components/species-card'
 import { LogicSpeciesCarousel } from '../logic/logic-species-carousel'
-import SectionDesafioCarousel from './shorthand-carousel'
+import ShorthandCarousel from './shorthand-carousel'
 
-async function SectionSpeciesCarousel() {
+async function SpeciesCarousel() {
   const { data_improved_UI } = await LogicSpeciesCarousel()
   return (
-    <SectionDesafioCarousel>
+    <ShorthandCarousel>
       {data_improved_UI.map((dataSpecie, index) => (
         <CarouselItem
           key={dataSpecie.created + dataSpecie.average_lifespan}
@@ -18,8 +18,8 @@ async function SectionSpeciesCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionDesafioCarousel>
+    </ShorthandCarousel>
   )
 }
 
-export default SectionSpeciesCarousel
+export default SpeciesCarousel
