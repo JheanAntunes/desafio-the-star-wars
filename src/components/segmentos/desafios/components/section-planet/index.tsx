@@ -1,4 +1,6 @@
+import { SkeletonCards } from '@/components/ui/skeletons/skeleton-cards'
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
+import { Suspense } from 'react'
 import SectionPlanetDesafioCarousel from '../../../components/planet-carousel'
 
 function SectionDesafioPlanet() {
@@ -9,7 +11,9 @@ function SectionDesafioPlanet() {
         <TypographyP>Clique no desafio abaixo para começar.</TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionPlanetDesafioCarousel segmento="desafios" />
+        <Suspense fallback={<SkeletonCards />}>
+          <SectionPlanetDesafioCarousel segmento="desafios" />
+        </Suspense>
       </div>
     </section>
   )
