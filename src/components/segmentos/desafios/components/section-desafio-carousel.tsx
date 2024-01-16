@@ -5,7 +5,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel'
 
-function SectionDesafioCarousel({ children }: React.PropsWithChildren) {
+function SectionCarousel({ children }: React.PropsWithChildren) {
   return (
     <Carousel
       opts={{
@@ -20,4 +20,4 @@ function SectionDesafioCarousel({ children }: React.PropsWithChildren) {
   )
 }
 
-export default SectionDesafioCarousel
+export default SectionCarousel
