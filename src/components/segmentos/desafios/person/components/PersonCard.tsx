@@ -1,15 +1,18 @@
 import EspadaLuz from '@/components/assets/espada-luz.png'
 import ShorthandListItem from '@/components/segmentos/components/shorthand-list-item'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { TypographyList } from '@/components/ui/typography'
 import { TypePerson } from '@/types/Typesfetch'
 import Image from 'next/image'
 
 type TypePersonCardProps = {
   dataFormatedImproveUi: TypePerson
-}
+} & React.PropsWithChildren
 
-const PersonCard = ({ dataFormatedImproveUi }: TypePersonCardProps) => {
+const PersonCard = ({
+  dataFormatedImproveUi,
+  children
+}: TypePersonCardProps) => {
   const {
     birth_year,
     eye_color,
@@ -24,9 +27,7 @@ const PersonCard = ({ dataFormatedImproveUi }: TypePersonCardProps) => {
       <Card className="bg-transparent transition-colors group-hover:border-blue-500">
         <CardHeader className="pb-0">
           <div className="flex items-center gap-1">
-            <CardTitle className="font-sans font-normal transition-colors group-hover:text-blue-500">
-              Desafio
-            </CardTitle>
+            {children}
             <Image
               src={EspadaLuz}
               alt=""
