@@ -12,7 +12,7 @@ import DescriptionSubListPlanet from './description-sub-list-planet'
 import DescriptionSubListSpecies from './description-sub-list-species'
 import DescriptionSubListStarships from './description-sub-list-starships'
 import DescriptionSubListVehicles from './description-sub-list-vehicles'
-import SubList from './section-species/sub-list'
+import SubList from './sub-list'
 import ShorthandListItem from './shorthand-list-item'
 
 type TypeListFilmProps = {

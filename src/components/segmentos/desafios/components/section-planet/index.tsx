@@ -1,5 +1,5 @@
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
-import SectionPlanetDesafioCarousel from './section-planet-desafio-carousel'
+import SectionPlanetDesafioCarousel from '../../../components/planet-carousel'
 
 function SectionDesafioPlanet() {
   return (

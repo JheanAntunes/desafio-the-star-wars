@@ -1,11 +1,11 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
-import PlanetCard from '../../planets/components/planet-card'
-import SectionDesafioCarousel from '../section-desafio-carousel'
-import { LogicSectionDesafioPlanetCarousel } from './logic-section-desafio-planet-carousel'
+import PlanetCard from '../desafios/planets/components/planet-card'
+import { LogicPlanetCarousel } from '../logic/logic-desafio-planet-carousel'
+import SectionDesafioCarousel from './shorthand-carousel'
 
-async function SectionPlanetDesafioCarousel() {
-  const { data_improved_UI } = await LogicSectionDesafioPlanetCarousel()
+async function SectionPlanetCarousel() {
+  const { data_improved_UI } = await LogicPlanetCarousel()
   return (
     <SectionDesafioCarousel>
       {data_improved_UI.map((dataPlanet, index) => (
@@ -22,4 +22,4 @@ async function SectionPlanetDesafioCarousel() {
   )
 }
 
-export default SectionPlanetDesafioCarousel
+export default SectionPlanetCarousel

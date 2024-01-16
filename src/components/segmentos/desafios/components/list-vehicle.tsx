@@ -5,7 +5,7 @@ import { formatedNumber } from '@/utils/formatedNumber'
 import { Fragment, Suspense } from 'react'
 import DescriptionSubListPerson from '../planets/[id]/components/description-subList-person'
 import DescriptionSubListFilms from './description-sub-list-film'
-import SubList from './section-species/sub-list'
+import SubList from './sub-list'
 import ShorthandListItem from './shorthand-list-item'
 
 type TypeListVehicleProps = {

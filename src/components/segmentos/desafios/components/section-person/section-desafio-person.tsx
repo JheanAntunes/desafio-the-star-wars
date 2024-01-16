@@ -1,5 +1,5 @@
+import SectionPersonCarousel from '@/components/segmentos/components/person-carousel'
 import { TypographyH3, TypographyP } from '@/components/ui/typography'
-import SectionDesafioPersonCarousel from './section-desafio-person-carousel'
 
 function SectionDesafioPerson() {
   return (
@@ -11,7 +11,7 @@ function SectionDesafioPerson() {
         </TypographyP>
       </div>
       <div className="flex items-center justify-center">
-        <SectionDesafioPersonCarousel />
+        <SectionPersonCarousel segmento="desafios" />
       </div>
     </section>
   )

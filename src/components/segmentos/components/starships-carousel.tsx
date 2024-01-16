@@ -1,13 +1,13 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
-import StarshipsCard from '../../starships/components/starships-card'
-import SectionDesafioCarousel from '../section-desafio-carousel'
-import LogicSectionDesafioCarouselStarships from './logic-section-desafio-carousel-starships'
+import StarshipsCard from '../desafios/starships/components/starships-card'
+import LogicCarouselStarships from '../logic/logic-starship-carousel-starships'
+import SectionCarousel from './shorthand-carousel'
 
-async function SectionStarshipsDesafioCarousel() {
-  const { data_improved_UI } = await LogicSectionDesafioCarouselStarships()
+async function SectionStarshipsCarousel() {
+  const { data_improved_UI } = await LogicCarouselStarships()
   return (
-    <SectionDesafioCarousel>
+    <SectionCarousel>
       {data_improved_UI.map((dataStarship, index) => (
         <CarouselItem
           key={dataStarship.created + dataStarship.MGLT}
@@ -18,8 +18,8 @@ async function SectionStarshipsDesafioCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionDesafioCarousel>
+    </SectionCarousel>
   )
 }
 
-export default SectionStarshipsDesafioCarousel
+export default SectionStarshipsCarousel

@@ -1,7 +1,7 @@
 import { TypographyListItem, TypographySmall } from '@/components/ui/typography'
 import { TypeFilms } from '@/types/Typesfetch'
 import promiseAllFormatedDataDescriptionSubList from '@/utils/promiseAll-formated-data-description-sub-list'
-import SubList from './section-species/sub-list'
+import SubList from './sub-list'
 
 type TypeDescriptionSubListFilmsProps = {
   urls: string[]

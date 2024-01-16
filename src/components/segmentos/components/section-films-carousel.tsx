@@ -1,13 +1,13 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
-import FilmCard from '../../films/components/film-card'
-import SectionDesafioCarousel from '../section-desafio-carousel'
-import LogicSectionDesafioFilmsCarousel from './logic-section-desafio-films-carousel'
+import FilmCard from '../desafios/films/components/film-card'
+import LogicSectionFilmsCarousel from '../logic/logic-films-carousel'
+import SectionCarousel from './shorthand-carousel'
 
-async function SectionFilmsDesafioCarousel() {
-  const { data_Improved_UI } = await LogicSectionDesafioFilmsCarousel()
+async function SectionFilmsCarousel() {
+  const { data_Improved_UI } = await LogicSectionFilmsCarousel()
   return (
-    <SectionDesafioCarousel>
+    <SectionCarousel>
       {data_Improved_UI.map((dataFilm, index) => (
         <CarouselItem
           key={dataFilm.created + dataFilm.characters}
@@ -18,8 +18,8 @@ async function SectionFilmsDesafioCarousel() {
           </Link>
         </CarouselItem>
       ))}
-    </SectionDesafioCarousel>
+    </SectionCarousel>
   )
 }
 
-export default SectionFilmsDesafioCarousel
+export default SectionFilmsCarousel

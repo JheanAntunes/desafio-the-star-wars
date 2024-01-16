@@ -8,7 +8,7 @@ import {
 import { TypeSpecies } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
 import Image from 'next/image'
-import SubList from '../../components/section-species/sub-list'
+import SubList from '../../components/sub-list'
 import ShorthandListItem from '../../components/shorthand-list-item'
 
 const SpeciesCard = ({

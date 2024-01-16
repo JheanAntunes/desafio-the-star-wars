@@ -1,5 +1,5 @@
 import { TypographyH2, TypographyP } from '@/components/ui/typography'
-import SectionFilmsDesafioCarousel from './section-films-desafio-carousel'
+import SectionFilmsDesafioCarousel from '../../../components/section-films-carousel'
 
 function SectionDesafioFilms() {
   return (
