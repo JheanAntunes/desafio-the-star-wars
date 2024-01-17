@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { TypeFetch, TypeFilms } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Films_improve_UI } from '@/utils/modiying_data_improve_ui'
@@ -7,8 +8,9 @@ import FilmCard from './film-card'
 
 type TypeFilmsCardsProps = {
   page?: string
+  segmento: TypeSegmento
 }
-const FilmsCards = async ({ page }: TypeFilmsCardsProps) => {
+const FilmsCards = async ({ page, segmento }: TypeFilmsCardsProps) => {
   const { results } = await fetchGet<TypeFetch<TypeFilms>>(
     `${BASE_URL_API}/films/?page=${page ?? 1}&format=json`
   )
@@ -20,9 +22,9 @@ const FilmsCards = async ({ page }: TypeFilmsCardsProps) => {
         <Fragment key={dataFilm.created + dataFilm.edited}>
           <Link
             className="group"
-            href={`/desafios/films/${index}?page=${page ?? 1}`}
+            href={`/${segmento}/films/${index}?page=${page ?? 1}`}
           >
-            <FilmCard {...dataFilm} />
+            <FilmCard {...dataFilm} segmento={segmento} />
           </Link>
         </Fragment>
       ))}

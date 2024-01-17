@@ -22,10 +22,10 @@ function PageFilmsDesafio({
         <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
       </div>
       <Suspense fallback={<SkeletonCards />}>
-        <FilmsCards page={page} />
+        <FilmsCards page={page} segmento="desafios" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
-        <FilmsPagination page={page} />
+        <FilmsPagination page={page} segmento="desafios" />
       </Suspense>
     </main>
   )
