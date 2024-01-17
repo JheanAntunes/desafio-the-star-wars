@@ -22,10 +22,10 @@ function PageVehiclesDesafio({
         <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
       </div>
       <Suspense fallback={<SkeletonCards />}>
-        <VehiclesCards page={page} />
+        <VehiclesCards page={page} segmento="desafios" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
-        <VehiclesPagination page={page} />
+        <VehiclesPagination page={page} segmento="desafios" />
       </Suspense>
     </main>
   )

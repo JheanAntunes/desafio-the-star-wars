@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { TypeFetch, TypeVehicle } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_VEHICLES_improve_UI } from '@/utils/modiying_data_improve_ui'
@@ -7,8 +8,9 @@ import VehiclesCard from './vehicles-card'
 
 type TypeVehiclesCardsProps = {
   page?: string
+  segmento: TypeSegmento
 }
-const VehiclesCards = async ({ page }: TypeVehiclesCardsProps) => {
+const VehiclesCards = async ({ page, segmento }: TypeVehiclesCardsProps) => {
   const { results } = await fetchGet<TypeFetch<TypeVehicle>>(
     `${BASE_URL_API}/vehicles/?page=${page ?? 1}&format=json`
   )
@@ -20,9 +22,9 @@ const VehiclesCards = async ({ page }: TypeVehiclesCardsProps) => {
         <Fragment key={dataVehicles.created + dataVehicles.edited}>
           <Link
             className="group"
-            href={`/desafios/vehicles/${index}?page=${page ?? 1}`}
+            href={`/${segmento}/vehicles/${index}?page=${page ?? 1}`}
           >
-            <VehiclesCard {...dataVehicles} />
+            <VehiclesCard {...dataVehicles} segmento={segmento} />
           </Link>
         </Fragment>
       ))}
