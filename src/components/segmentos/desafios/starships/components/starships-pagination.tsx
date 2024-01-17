@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import {
   Pagination,
   PaginationContent,
@@ -12,11 +13,12 @@ import { Fragment } from 'react'
 
 type TypeStarshipsPagination = {
   page?: string
+  segmento: TypeSegmento
 }
 
 const StarshipsPagination = async (props: TypeStarshipsPagination) => {
   const currentPage = props.page ? Number(props.page) : 1
-
+  const { segmento } = props
   const {
     count: totalData,
     previous,
@@ -33,13 +35,13 @@ const StarshipsPagination = async (props: TypeStarshipsPagination) => {
         <PaginationContent>
           {previous && (
             <PaginationPrevious
-              href={`/desafios/starships/?page=${currentPage - 1}`}
+              href={`/${segmento}/starships/?page=${currentPage - 1}`}
             />
           )}
           {pagination.map((index) => (
             <Fragment key={index}>
               <PaginationLink
-                href={`/desafios/starships/?page=${index + 1}`}
+                href={`/${segmento}/starships/?page=${index + 1}`}
                 isActive={currentPage === index + 1}
               >
                 {index + 1}
@@ -48,7 +50,7 @@ const StarshipsPagination = async (props: TypeStarshipsPagination) => {
           ))}
           {next && (
             <PaginationNext
-              href={`/desafios/starships/?page=${currentPage + 1}`}
+              href={`/${segmento}/starships/?page=${currentPage + 1}`}
             />
           )}
         </PaginationContent>
