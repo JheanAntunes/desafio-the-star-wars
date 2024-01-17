@@ -1,4 +1,4 @@
-import EspadaLuz from '@/components/assets/espada-luz.png'
+import ImgRoboDocs from '@/components/assets/img-robo-png.png'
 import CategoriaActiveLink from '@/components/layouts/desafio/categoria-active-link-by-pathname'
 import {
   CategoriaContainer,
@@ -21,22 +21,20 @@ function CategoriaDocs() {
     <>
       <CategoriaContainer>
         <div className="flex gap-1">
-          <CategoriaTitle>Categorias de Documentação</CategoriaTitle>
-          <div className="relative h-10 w-10 overflow-hidden">
-            <Image
-              src={EspadaLuz}
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-contain"
-            />
-          </div>
+          <CategoriaTitle>Categorias</CategoriaTitle>
+          <Image
+            src={ImgRoboDocs}
+            alt=""
+            height={40}
+            width={40}
+            className="object-contain"
+          />
         </div>
         <div className="md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="gap-1">
-                Menu de Categorias Documentação{' '}
+                Menu de Categorias
                 <ArrowDown height={14} width={14} />
               </Button>
             </DropdownMenuTrigger>
