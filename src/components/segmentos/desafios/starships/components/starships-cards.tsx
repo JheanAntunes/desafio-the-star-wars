@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { TypeFetch, TypeStarships } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_STARSHIPS_improve_UI } from '@/utils/modiying_data_improve_ui'
@@ -7,8 +8,9 @@ import StarshipsCard from './starships-card'
 
 type TypeStarshipsCardsProps = {
   page?: string
+  segmento: TypeSegmento
 }
-const StarshipsCards = async ({ page }: TypeStarshipsCardsProps) => {
+const StarshipsCards = async ({ page, segmento }: TypeStarshipsCardsProps) => {
   const { results } = await fetchGet<TypeFetch<TypeStarships>>(
     `${BASE_URL_API}/starships/?page=${page ?? 1}&format=json`
   )
@@ -20,9 +22,9 @@ const StarshipsCards = async ({ page }: TypeStarshipsCardsProps) => {
         <Fragment key={dataStarship.created + dataStarship.edited}>
           <Link
             className="group"
-            href={`/desafios/starships/${index}?page=${page ?? 1}`}
+            href={`/${segmento}/starships/${index}?page=${page ?? 1}`}
           >
-            <StarshipsCard {...dataStarship} />
+            <StarshipsCard {...dataStarship} segmento={segmento} />
           </Link>
         </Fragment>
       ))}

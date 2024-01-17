@@ -1,14 +1,14 @@
-import PlanetCards from '@/components/segmentos/desafios/planets/components/planet-cards'
-import PlanetPagination from '@/components/segmentos/desafios/planets/components/planet-pagination'
+import PersonCards from '@/components/segmentos/desafios/person/components/person-cards'
+import PersonPagination from '@/components/segmentos/desafios/person/components/person-pagination'
 import { SkeletonCards } from '@/components/ui/skeletons/skeleton-cards'
 import SkeletonPagination from '@/components/ui/skeletons/skeleton-pagination'
-import { TypographyH2, TypographyP } from '@/components/ui/typography'
+import { TypographyH2 } from '@/components/ui/typography'
 import { Suspense } from 'react'
 
 type TypeParamsSearch = {
   page?: string
 }
-function PagePlanetDesafio({
+function PagePersonDesafio({
   searchParams
 }: {
   searchParams: TypeParamsSearch
@@ -18,17 +18,16 @@ function PagePlanetDesafio({
   return (
     <main className="container my-8 flex flex-col gap-8">
       <div className="flex flex-col gap-1">
-        <TypographyH2>Desafio de Planetas</TypographyH2>
-        <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
+        <TypographyH2>Documentação de Pessoa</TypographyH2>
       </div>
       <Suspense fallback={<SkeletonCards />}>
-        <PlanetCards page={page} segmento="desafios" />
+        <PersonCards page={page} segmento="docs" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
-        <PlanetPagination page={page} segmento="desafios" />
+        <PersonPagination page={page} segmento="docs" />
       </Suspense>
     </main>
   )
 }
 
-export default PagePlanetDesafio
+export default PagePersonDesafio

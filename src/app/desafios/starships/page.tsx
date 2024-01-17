@@ -22,10 +22,10 @@ function PageStarshipsDesafio({
         <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
       </div>
       <Suspense fallback={<SkeletonCards />}>
-        <StarshipsCards page={page} />
+        <StarshipsCards page={page} segmento="desafios" />
       </Suspense>
       <Suspense fallback={<SkeletonPagination />}>
-        <StarshipsPagination page={page} />
+        <StarshipsPagination page={page} segmento="desafios" />
       </Suspense>
     </main>
   )
