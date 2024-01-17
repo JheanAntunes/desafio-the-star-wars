@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import {
   Pagination,
   PaginationContent,
@@ -12,11 +13,12 @@ import { Fragment } from 'react'
 
 type TypePlanetPagination = {
   page?: string
+  segmento: TypeSegmento
 }
 
 const PlanetPagination = async (props: TypePlanetPagination) => {
   const currentPage = props.page ? Number(props.page) : 1
-
+  const { segmento } = props
   const {
     count: totalData,
     previous,
@@ -33,13 +35,13 @@ const PlanetPagination = async (props: TypePlanetPagination) => {
         <PaginationContent>
           {previous && (
             <PaginationPrevious
-              href={`/desafios/planets/?page=${currentPage - 1}`}
+              href={`/${segmento}/planets/?page=${currentPage - 1}`}
             />
           )}
           {pagination.map((index) => (
             <Fragment key={index}>
               <PaginationLink
-                href={`/desafios/planets/?page=${index + 1}`}
+                href={`/${segmento}/planets/?page=${index + 1}`}
                 isActive={currentPage === index + 1}
               >
                 {index + 1}
@@ -48,7 +50,7 @@ const PlanetPagination = async (props: TypePlanetPagination) => {
           ))}
           {next && (
             <PaginationNext
-              href={`/desafios/planets/?page=${currentPage + 1}`}
+              href={`/${segmento}/planets/?page=${currentPage + 1}`}
             />
           )}
         </PaginationContent>
