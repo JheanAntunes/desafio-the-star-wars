@@ -6,17 +6,14 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Person_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListPerson from '../../../../components/list-person'
+import ListPerson from './list-person'
 
-type TypeDesafioPersonDescriptionProps = {
+type TypePersonDescriptionProps = {
   id: string
   page: string
 }
 
-const DesafioPersonDescription = async ({
-  id,
-  page
-}: TypeDesafioPersonDescriptionProps) => {
+const PersonDescription = async ({ id, page }: TypePersonDescriptionProps) => {
   const { results } = await fetchGet<TypeFetch<TypePerson>>(
     `${BASE_URL_API}/people/?page=${page}&format=json`
   )
@@ -47,4 +44,4 @@ const DesafioPersonDescription = async ({
   )
 }
 
-export default DesafioPersonDescription
+export default PersonDescription
