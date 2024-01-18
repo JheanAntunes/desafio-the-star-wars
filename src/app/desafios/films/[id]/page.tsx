@@ -1,5 +1,5 @@
+import FilmDescription from '@/components/segmentos/components/film-description'
 import ChallengeCompletedFilm from '@/components/segmentos/desafios/films/[id]/components/challenge-completed-film'
-import DesafioFilmDescription from '@/components/segmentos/desafios/films/[id]/components/desafio-film-description'
 import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
@@ -33,7 +33,7 @@ const PageChallengeFilm = ({ params, searchParams }: TypePageChallengeFilm) => {
         />
       </Suspense>
       <Suspense fallback={<SkeletonDescription />}>
-        <DesafioFilmDescription id={id} page={currentPage} />
+        <FilmDescription id={id} page={currentPage} segmento="desafios" />
       </Suspense>
     </main>
   )
