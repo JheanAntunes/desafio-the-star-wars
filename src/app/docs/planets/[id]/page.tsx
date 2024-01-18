@@ -30,14 +30,14 @@ const PageDinamicaPlanet = async ({
   const currentPage = page ?? '1'
 
   const { results } = await fetchGet<TypeFetch<TypePlanet>>(
-    `${BASE_URL_API}/planets/?page=${page ?? 1}&format=json`
+    `${BASE_URL_API}/planets/?page=${currentPage}&format=json`
   )
   //verificando se o id(index) é menor que a quantidade do array result
   if (!hasNext(Number(id), results.length)) notFound()
   const { name } = results[Number(id)]
 
   return (
-    <main className="container flex flex-col gap-8">
+    <main className="container my-8 flex flex-col gap-8">
       <TypographyH1 className="text-center">{name}</TypographyH1>
       <Suspense fallback={<SkeletonDescription />}>
         <PlanetDescription id={id} page={currentPage} segmento="docs" />

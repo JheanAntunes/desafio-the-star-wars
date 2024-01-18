@@ -37,7 +37,7 @@ const PageDinamicaSpecies = async ({
   const { name } = results[Number(id)]
 
   return (
-    <main className="container flex flex-col gap-8">
+    <main className="container my-8 flex flex-col gap-8">
       <TypographyH1 className="text-center">{name}</TypographyH1>
       <Suspense fallback={<SkeletonDescription />}>
         <SpeciesDescription id={id} page={currentPage} segmento="docs" />
