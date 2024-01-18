@@ -1,5 +1,5 @@
+import VehicleDescription from '@/components/segmentos/components/vehicle-description'
 import ChallengeCompletedVehicles from '@/components/segmentos/desafios/vehicles/[id]/components/challenge-completed-vehicle'
-import VehicleDescription from '@/components/segmentos/desafios/vehicles/[id]/components/vehicle-description'
 import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
@@ -13,15 +13,15 @@ type TypeSearchParams = {
   challengerCompleted?: string
 }
 
-type TypePageDesafioVehicleProps = {
+type TypePageDinamicaDesafioVehicleProps = {
   params: TypeParams
   searchParams: TypeSearchParams
 }
 
-const PageDesafioVehicle = ({
+const PageDinamicaDesafioVehicle = ({
   params,
   searchParams
-}: TypePageDesafioVehicleProps) => {
+}: TypePageDinamicaDesafioVehicleProps) => {
   const { id } = params
   const { page, challengerCompleted } = searchParams
   const currentPage = page ?? '1'
@@ -35,10 +35,10 @@ const PageDesafioVehicle = ({
         />
       </Suspense>
       <Suspense fallback={<SkeletonDescription />}>
-        <VehicleDescription id={id} page={currentPage} />
+        <VehicleDescription id={id} page={currentPage} segmento="desafios" />
       </Suspense>
     </main>
   )
 }
 
-export default PageDesafioVehicle
+export default PageDinamicaDesafioVehicle
