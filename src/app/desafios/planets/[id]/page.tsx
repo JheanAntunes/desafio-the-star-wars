@@ -1,5 +1,5 @@
+import PlanetDescription from '@/components/segmentos/components/planets-description'
 import ChallengerCompletedPlanet from '@/components/segmentos/desafios/planets/[id]/components/challenger-completed-planet'
-import DesafioPlanetDescription from '@/components/segmentos/desafios/planets/[id]/components/desafio-planets-description'
 import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
@@ -36,7 +36,7 @@ const PageDinamicaDesafioPlanet = ({
         />
       </Suspense>
       <Suspense fallback={<SkeletonDescription />}>
-        <DesafioPlanetDescription id={id} page={currentPage} />
+        <PlanetDescription id={id} page={currentPage} segmento="desafios" />
       </Suspense>
     </main>
   )
