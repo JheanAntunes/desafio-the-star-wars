@@ -1,7 +1,7 @@
+import PersonDescription from '@/components/segmentos/components/person-description'
 import DesafioPerson from '@/components/segmentos/desafios/person/[id]/components/desafio-person'
-import DesafioPersonDescription from '@/components/segmentos/desafios/person/[id]/components/desafio-person-description'
 import { Skeleton } from '@/components/ui/skeleton'
-import SkeletonDesafioPersonDescription from '@/components/ui/skeletons/skeleton-description'
+import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
 
 type TypeParams = {
@@ -28,8 +28,8 @@ const PageDinamicaPersonDesafio = ({
       <Suspense fallback={<Skeleton className="h-96 w-full" />}>
         <DesafioPerson id={id} page={page ?? '1'} />
       </Suspense>
-      <Suspense fallback={<SkeletonDesafioPersonDescription />}>
-        <DesafioPersonDescription id={id} page={page ?? '1'} />
+      <Suspense fallback={<SkeletonDescription />}>
+        <PersonDescription id={id} page={page ?? '1'} segmento="desafios" />
       </Suspense>
     </main>
   )
