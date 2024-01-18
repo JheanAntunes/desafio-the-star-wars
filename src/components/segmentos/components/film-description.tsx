@@ -7,7 +7,7 @@ import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { modifying_data_Films_improve_UI } from '@/utils/modiying_data_improve_ui'
 import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
-import ListFilm from '../../../../components/list-film'
+import ListFilm from './list-film'
 
 type TypeFilmDescriptionProps = {
   id: string

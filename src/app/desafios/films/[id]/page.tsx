@@ -1,5 +1,5 @@
+import FilmDescription from '@/components/segmentos/components/film-description'
 import ChallengeCompletedFilm from '@/components/segmentos/desafios/films/[id]/components/challenge-completed-film'
-import FilmDescription from '@/components/segmentos/desafios/films/[id]/components/film-description'
 import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
