@@ -1,6 +1,6 @@
 import LoadingDinamico from '@/components/ui/skeletons/LoadingDinamico'
 
-const LoadingPersonDocs = () => {
+const LoadingDinamicoPlanet = () => {
   return (
     <>
       <LoadingDinamico />
@@ -8,4 +8,4 @@ const LoadingPersonDocs = () => {
   )
 }
 
-export default LoadingPersonDocs
+export default LoadingDinamicoPlanet
