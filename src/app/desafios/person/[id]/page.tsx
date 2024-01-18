@@ -29,7 +29,7 @@ const PageDinamicaPersonDesafio = ({
         <DesafioPerson id={id} page={page ?? '1'} />
       </Suspense>
       <Suspense fallback={<SkeletonDescription />}>
-        <PersonDescription id={id} page={page ?? '1'} />
+        <PersonDescription id={id} page={page ?? '1'} segmento="desafios" />
       </Suspense>
     </main>
   )
