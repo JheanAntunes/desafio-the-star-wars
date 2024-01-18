@@ -1,5 +1,5 @@
+import StarshipsDescription from '@/components/segmentos/components/starships-description'
 import ChallengeCompletedStarships from '@/components/segmentos/desafios/starships/[id]/components/challenge-completed-starships'
-import StarshipsDescription from '@/components/segmentos/desafios/starships/[id]/components/starships-description'
 import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
@@ -35,7 +35,7 @@ const PageDesafioStarships = ({
         />
       </Suspense>
       <Suspense fallback={<SkeletonDescription />}>
-        <StarshipsDescription id={id} page={currentPage} />
+        <StarshipsDescription id={id} page={currentPage} segmento="desafios" />
       </Suspense>
     </main>
   )
