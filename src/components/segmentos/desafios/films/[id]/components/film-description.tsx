@@ -1,3 +1,4 @@
+import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { hasNext } from '@/components/segmentos/utils/has-next'
 import { buttonVariants } from '@/components/ui/button'
 import { TypographyH2 } from '@/components/ui/typography'
@@ -8,15 +9,17 @@ import { NavigationIcon } from 'lucide-react'
 import Link from 'next/link'
 import ListFilm from '../../../../components/list-film'
 
-type TypeDesafioFilmDescriptionProps = {
+type TypeFilmDescriptionProps = {
   id: string
   page: string
+  segmento: TypeSegmento
 }
 
-const DesafioFilmDescription = async ({
+const FilmDescription = async ({
   id,
-  page
-}: TypeDesafioFilmDescriptionProps) => {
+  page,
+  segmento
+}: TypeFilmDescriptionProps) => {
   const { results } = await fetchGet<TypeFetch<TypeFilms>>(
     `${BASE_URL_API}/films/?page=${page}&format=json`
   )
@@ -33,13 +36,16 @@ const DesafioFilmDescription = async ({
         <TypographyH2 className="order-2 md:order-1">Descrição</TypographyH2>
         {nextDesafio && (
           <Link
-            href={`/desafios/films/${nextDesafio}?page=${page}`}
+            href={`/${segmento}/films/${nextDesafio}?page=${page}`}
             className={buttonVariants({
               variant: 'outline',
               className: 'order-1 flex gap-1 font-sans md:order-2'
             })}
           >
-            Próximo Desafio <NavigationIcon width={20} height={20} />
+            {segmento === 'desafios'
+              ? 'Próximo Desafio'
+              : 'Próxima Documentação'}{' '}
+            <NavigationIcon width={20} height={20} />
           </Link>
         )}
       </div>
@@ -48,4 +54,4 @@ const DesafioFilmDescription = async ({
   )
 }
 
-export default DesafioFilmDescription
+export default FilmDescription
