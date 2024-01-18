@@ -1,9 +1,9 @@
-import LoadingDinamicoDocs from '@/components/ui/skeletons/LoadingDinamicoDocs'
+import LoadingDinamico from '@/components/ui/skeletons/LoadingDinamico'
 
 const LoadingPersonDocs = () => {
   return (
     <>
-      <LoadingDinamicoDocs />
+      <LoadingDinamico />
     </>
   )
 }
