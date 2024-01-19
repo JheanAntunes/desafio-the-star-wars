@@ -1,7 +1,9 @@
 import { TypeSchemaFormFieldName } from '@/components/schema/schema-form-who-is'
 import { TypeDataStorageChallenger } from '@/types/TypeLocalStorage'
 import { formatedString } from '@/utils/formated-string'
+import { keyStorage } from '@/utils/key-localstorage'
 import logicLocalStorageDataChallenger from '@/utils/logic-localStorage-data-challenger'
+
 import ToastCompletedChallenger from '@/utils/toast-completed-challenger'
 import ToastFailedChallenger from '@/utils/toast-failed-challenger'
 import { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime'
@@ -32,9 +34,9 @@ const LogicFormChallenger = ({
 
       // localStorage:
       logicLocalStorageDataChallenger({
-        storageChave: 'storageChallenger',
-        storageValue: formatedString(dataForm.name),
-        propertyAddValue: propertyCategory
+        storageChave: keyStorage,
+        property: propertyCategory,
+        propertyValue: formatedString(dataForm.name)
       })
 
       // gererenciamento de desafio completado pela url:
