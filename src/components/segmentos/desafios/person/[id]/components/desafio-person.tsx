@@ -1,3 +1,4 @@
+import WrapperLocalStorage from '@/components/segmentos/components/wrapperLocalStorage'
 import {
   TypographyH1,
   TypographyH2,
@@ -19,26 +20,28 @@ const DesafioPerson = async ({ id, page }: TypeDesafioPersonProps) => {
     `${BASE_URL_API}/people/?page=${page}&format=json`
   )
 
-  const dataPerson = results[Number(id)]
+  const { name } = results[Number(id)]
 
   return (
-    <DontShowComponentChallengeCompleted secretCaracteristica={dataPerson.name}>
-      <div className="text-center">
-        <TypographyH1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-          Desafio de Pessoa
-        </TypographyH1>
-        <TypographyP>Você precisa adivinhar o nome da pessoa</TypographyP>
-        <TypographySmall>Dica: Leia a descrição da pessoa</TypographySmall>
-      </div>
-      <div className="flex flex-col gap-5">
-        <TypographyH2 className="font-sans text-4xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          Quem é ?
-        </TypographyH2>
-        <div className="w-full max-w-96">
-          <FormWhoIs secretCaracteristica={dataPerson.name} />
+    <WrapperLocalStorage caracteristica={name} categoria="challengerPersons">
+      <DontShowComponentChallengeCompleted secretCaracteristica={name}>
+        <div className="text-center">
+          <TypographyH1 className="text-3xl tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            Desafio de Pessoa
+          </TypographyH1>
+          <TypographyP>Você precisa adivinhar o nome da pessoa</TypographyP>
+          <TypographySmall>Dica: Leia a descrição da pessoa</TypographySmall>
         </div>
-      </div>
-    </DontShowComponentChallengeCompleted>
+        <div className="flex flex-col gap-5">
+          <TypographyH2 className="font-sans text-4xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            Quem é ?
+          </TypographyH2>
+          <div className="w-full max-w-96">
+            <FormWhoIs secretCaracteristica={name} />
+          </div>
+        </div>
+      </DontShowComponentChallengeCompleted>
+    </WrapperLocalStorage>
   )
 }
 
