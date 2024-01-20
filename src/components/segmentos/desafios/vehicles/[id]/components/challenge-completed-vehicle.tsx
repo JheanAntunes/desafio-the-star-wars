@@ -1,6 +1,9 @@
+import WrapperLocalStorage from '@/components/segmentos/components/wrapperLocalStorage'
+import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
 import { TypeFetch, TypeVehicle } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { formatedString } from '@/utils/formated-string'
+import { Suspense } from 'react'
 import UIChallengeCompleted from '../../../components/ui-challenge-completed'
 import DesafioVehicle from './desafio-vehicle'
 
@@ -27,7 +30,13 @@ const ChallengeCompletedVehicles = async ({
   ) {
     return <UIChallengeCompleted name={challengerCompleted} />
   }
-  return <DesafioVehicle id={id} page={page} />
+  return (
+    <WrapperLocalStorage caracteristica={name} categoria="challengerVehicles">
+      <Suspense fallback={<SkeletonCategorias />}>
+        <DesafioVehicle id={id} page={page} />
+      </Suspense>
+    </WrapperLocalStorage>
+  )
 }
 
 export default ChallengeCompletedVehicles

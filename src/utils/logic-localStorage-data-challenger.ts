@@ -2,27 +2,78 @@ import { TypeDataStorageChallenger } from '@/types/TypeLocalStorage'
 
 type TypelogicLocalStorage = {
   storageChave: string
-  storageValue: string
-  propertyAddValue: keyof TypeDataStorageChallenger
+  property: keyof TypeDataStorageChallenger
+  propertyValue: string
 }
+
+type TypeAdd = TypelogicLocalStorage & {
+  dataStorage: TypeDataStorageChallenger
+}
+
+const addPropertyWithValue = ({
+  dataStorage,
+  storageChave,
+  property,
+  propertyValue
+}: TypeAdd) => {
+  //localStorage add property
+  dataStorage[property] = [propertyValue]
+  localStorage.setItem(
+    storageChave,
+    JSON.stringify({
+      ...dataStorage
+    })
+  )
+}
+
+const addKeyLocalStorageWithInitialValue = ({
+  storageChave,
+  property,
+  propertyValue
+}: TypelogicLocalStorage) => {
+  const addDataLocalStorage: TypeDataStorageChallenger = {}
+  addPropertyWithValue({
+    dataStorage: addDataLocalStorage,
+    storageChave,
+    property,
+    propertyValue
+  })
+}
+
+const addNewValueProperty = ({
+  dataStorage,
+  storageChave,
+  property,
+  propertyValue
+}: TypeAdd) => {
+  const verificatedValue = dataStorage[property]?.includes(propertyValue)
+  if (!verificatedValue) {
+    //add value
+    dataStorage[property] = [...dataStorage[property]!, propertyValue]
+    localStorage.setItem(
+      storageChave,
+      JSON.stringify({
+        ...dataStorage
+      })
+    )
+  }
+  return
+}
+
 const logicLocalStorageDataChallenger = ({
   storageChave,
-  storageValue,
-  propertyAddValue
+  property,
+  propertyValue
 }: TypelogicLocalStorage) => {
   // localStorage verificated
   const dataStorageChallenger = localStorage.getItem(storageChave)
   if (!dataStorageChallenger) {
-    const addDataLocalStorage: TypeDataStorageChallenger = {}
-    addDataLocalStorage[propertyAddValue] = [storageValue]
-    //localStorage add Chave
-    localStorage.setItem(
+    addKeyLocalStorageWithInitialValue({
       storageChave,
-      JSON.stringify({
-        ...addDataLocalStorage
-      })
-    )
-    //break functions
+      property,
+      propertyValue
+    })
+    //break
     return
   }
 
@@ -30,36 +81,23 @@ const logicLocalStorageDataChallenger = ({
     dataStorageChallenger
   )
 
-  if (!formatedDataStorageChallenger[propertyAddValue]) {
-    formatedDataStorageChallenger[propertyAddValue] = [storageValue]
-    //localStorage add property
-    localStorage.setItem(
+  if (!formatedDataStorageChallenger[property]) {
+    addPropertyWithValue({
+      dataStorage: formatedDataStorageChallenger,
       storageChave,
-      JSON.stringify({
-        ...formatedDataStorageChallenger
-      })
-    )
-    //break functionss
+      property,
+      propertyValue
+    })
+    //break function
     return
   }
 
-  const verificatedValue =
-    formatedDataStorageChallenger[propertyAddValue]?.includes(storageValue)
-
-  if (!verificatedValue) {
-    //add value
-    formatedDataStorageChallenger[propertyAddValue] = [
-      ...formatedDataStorageChallenger[propertyAddValue]!,
-      storageValue
-    ]
-
-    localStorage.setItem(
-      storageChave,
-      JSON.stringify({
-        ...formatedDataStorageChallenger
-      })
-    )
-  }
+  addNewValueProperty({
+    dataStorage: formatedDataStorageChallenger,
+    storageChave,
+    property,
+    propertyValue
+  })
 }
 
 export default logicLocalStorageDataChallenger

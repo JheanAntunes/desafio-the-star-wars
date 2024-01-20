@@ -1,3 +1,4 @@
+import WrapperLocalStorage from '@/components/segmentos/components/wrapperLocalStorage'
 import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
 import { TypeFetch, TypeFilms } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
@@ -27,13 +28,17 @@ const ChallengeCompletedFilm = async ({
     challengerCompleted &&
     formatedString(challengerCompleted) === formatedString(title)
   ) {
-    return <UIChallengeCompleted name={challengerCompleted} />
+    return <UIChallengeCompleted name={title} />
   }
 
   return (
-    <Suspense fallback={<SkeletonCategorias />}>
-      <DesafioFilm id={id} page={page} />
-    </Suspense>
+    <>
+      <WrapperLocalStorage caracteristica={title} categoria="challengerFilms">
+        <Suspense fallback={<SkeletonCategorias />}>
+          <DesafioFilm id={id} page={page} />
+        </Suspense>
+      </WrapperLocalStorage>
+    </>
   )
 }
 

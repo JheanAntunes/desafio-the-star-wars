@@ -32,6 +32,7 @@ const PageChallengeFilm = ({ params, searchParams }: TypePageChallengeFilm) => {
           challengerCompleted={challengerCompleted}
         />
       </Suspense>
+
       <Suspense fallback={<SkeletonDescription />}>
         <FilmDescription id={id} page={currentPage} segmento="desafios" />
       </Suspense>

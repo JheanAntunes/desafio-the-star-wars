@@ -91,7 +91,7 @@ export const modifying_data_STARSHIPS_improve_UI = (
       starship.max_atmosphering_speed
     ),
     model: modifying_property_improve_UI(starship.model),
-    name: modifying_property_improve_UI(starship.cargo_capacity),
+    name: modifying_property_improve_UI(starship.name),
     passengers: modifying_property_improve_UI(starship.passengers),
     films: starship.films ? starship.films : null,
     pilots: starship.pilots ? starship.pilots : null,

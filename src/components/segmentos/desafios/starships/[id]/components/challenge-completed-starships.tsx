@@ -1,6 +1,9 @@
+import WrapperLocalStorage from '@/components/segmentos/components/wrapperLocalStorage'
+import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
 import { TypeFetch, TypeStarships } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import { formatedString } from '@/utils/formated-string'
+import { Suspense } from 'react'
 import UIChallengeCompleted from '../../../components/ui-challenge-completed'
 import DesafioStarships from './desafio-starships'
 
@@ -27,7 +30,13 @@ const ChallengeCompletedStarships = async ({
   ) {
     return <UIChallengeCompleted name={challengerCompleted} />
   }
-  return <DesafioStarships id={id} page={page} />
+  return (
+    <WrapperLocalStorage caracteristica={name} categoria="challengerStarships">
+      <Suspense fallback={<SkeletonCategorias />}>
+        <DesafioStarships id={id} page={page} />
+      </Suspense>
+    </WrapperLocalStorage>
+  )
 }
 
 export default ChallengeCompletedStarships

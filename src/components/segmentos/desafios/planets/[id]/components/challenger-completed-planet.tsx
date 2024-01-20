@@ -1,3 +1,4 @@
+import WrapperLocalStorage from '@/components/segmentos/components/wrapperLocalStorage'
 import SkeletonCategorias from '@/components/ui/skeletons/skeleton-categorias'
 import { TypeFetch, TypePlanet } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
@@ -31,9 +32,11 @@ const ChallengerCompletedPlanet = async ({
   }
 
   return (
-    <Suspense fallback={<SkeletonCategorias />}>
-      <DesafioPlanets id={id} page={page} />
-    </Suspense>
+    <WrapperLocalStorage caracteristica={name} categoria="challengerPlanets">
+      <Suspense fallback={<SkeletonCategorias />}>
+        <DesafioPlanets id={id} page={page} />
+      </Suspense>
+    </WrapperLocalStorage>
   )
 }
 

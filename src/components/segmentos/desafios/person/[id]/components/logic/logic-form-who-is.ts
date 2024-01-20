@@ -2,6 +2,7 @@ import { TypeSchemaFormFieldName } from '@/components/schema/schema-form-who-is'
 import { SubmitHandler } from 'react-hook-form'
 
 import { formatedString } from '@/utils/formated-string'
+import { keyStorage } from '@/utils/key-localstorage'
 import logicLocalStorageDataChallenger from '@/utils/logic-localStorage-data-challenger'
 import ToastCompletedChallenger from '@/utils/toast-completed-challenger'
 import ToastFailedChallenger from '@/utils/toast-failed-challenger'
@@ -29,9 +30,9 @@ const LogicFormWhoIs = ({ secretCaracteristica }: TypeLogicFormWhoIsProps) => {
 
       //localStorage:
       logicLocalStorageDataChallenger({
-        storageChave: 'storageChallenger',
-        storageValue: formatedSecretCaracteristica,
-        propertyAddValue: 'challengerPersons'
+        storageChave: keyStorage,
+        property: 'challengerPersons',
+        propertyValue: formatedSecretCaracteristica
       })
     } else {
       //toast: message failed

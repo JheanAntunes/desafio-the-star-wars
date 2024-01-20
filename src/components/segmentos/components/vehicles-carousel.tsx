@@ -19,7 +19,7 @@ async function VehiclesCarousel({ segmento }: TypeVehiclesCarouselProps) {
           className="pl-8 md:basis-1/2 lg:basis-1/3"
         >
           <Link className="group" href={`/${segmento}/vehicles/${index}`}>
-            <VehiclesCard {...dataVehicle} />
+            <VehiclesCard {...dataVehicle} segmento={segmento} />
           </Link>
         </CarouselItem>
       ))}
