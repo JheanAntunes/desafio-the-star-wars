@@ -1,8 +1,11 @@
 import EspadaLuz from '@/components/assets/espada-luz.png'
 import ImgRoboDocs from '@/components/assets/img-robo-png.png'
+import CardChallenge from '@/components/segmentos/components/card-challenge'
+import CardTitleChallenge from '@/components/segmentos/components/card-title-challenge'
+import CheckedDesafio from '@/components/segmentos/components/checked-desafio'
 import ShorthandListItem from '@/components/segmentos/components/shorthand-list-item'
 import { TypeSegmento } from '@/components/segmentos/types/segmento'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { CardContent, CardHeader } from '@/components/ui/card'
 import { TypographyList } from '@/components/ui/typography'
 import { TypePlanet } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
@@ -24,12 +27,17 @@ const PlanetCard = ({
   const verificatedSegmentoDesafios = segmento === 'desafios'
 
   return (
-    <Card className="bg-transparent transition-colors group-hover:border-blue-500">
+    <CardChallenge caracteristica={name} categoria="challengerPlanets">
+      <CheckedDesafio caracteristica={name} categoria="challengerPlanets" />
       <CardHeader className="pb-0">
         <div className="flex items-center gap-1">
-          <CardTitle className="font-sans font-normal transition-colors group-hover:text-blue-500">
+          <CardTitleChallenge
+            caracteristica={name}
+            categoria="challengerPlanets"
+            segmento={segmento}
+          >
             {verificatedSegmentoDesafios ? 'Desafio' : name}
-          </CardTitle>
+          </CardTitleChallenge>
           {verificatedSegmentoDesafios ? (
             <Image
               src={EspadaLuz}
@@ -75,7 +83,7 @@ const PlanetCard = ({
           <ShorthandListItem title="Terreno:" caracteristica={terrain} />
         </TypographyList>
       </CardContent>
-    </Card>
+    </CardChallenge>
   )
 }
 

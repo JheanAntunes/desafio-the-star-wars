@@ -1,7 +1,10 @@
 import EspadaLuz from '@/components/assets/espada-luz.png'
 import ImgRoboDocs from '@/components/assets/img-robo-png.png'
+import CardChallenge from '@/components/segmentos/components/card-challenge'
+import CardTitleChallenge from '@/components/segmentos/components/card-title-challenge'
+import CheckedDesafio from '@/components/segmentos/components/checked-desafio'
 import { TypeSegmento } from '@/components/segmentos/types/segmento'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { CardContent, CardHeader } from '@/components/ui/card'
 import { TypographyList } from '@/components/ui/typography'
 import { TypeStarships } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
@@ -19,12 +22,17 @@ const StarshipsCard = ({
 }: TypeStarships & { segmento: TypeSegmento }) => {
   const verificatedSegmentoDesafios = segmento === 'desafios'
   return (
-    <Card className="bg-transparent transition-colors group-hover:border-blue-500">
+    <CardChallenge caracteristica={name} categoria="challengerStarships">
+      <CheckedDesafio caracteristica={name} categoria="challengerStarships" />
       <CardHeader className="pb-0">
         <div className="flex items-center gap-1">
-          <CardTitle className="font-sans font-normal transition-colors group-hover:text-blue-500">
-            {verificatedSegmentoDesafios ? 'Desafio' : name}
-          </CardTitle>
+          <CardTitleChallenge
+            caracteristica={name}
+            categoria="challengerStarships"
+            segmento={segmento}
+          >
+            Desafio
+          </CardTitleChallenge>
           {verificatedSegmentoDesafios ? (
             <Image
               src={EspadaLuz}
@@ -65,7 +73,7 @@ const StarshipsCard = ({
           />
         </TypographyList>
       </CardContent>
-    </Card>
+    </CardChallenge>
   )
 }
 
