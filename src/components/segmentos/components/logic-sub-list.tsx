@@ -24,7 +24,7 @@ const LogicSubList = ({
     ) {
       return (
         <TypographyListItem>
-          <TypographySmall className="text-zinc-900">
+          <TypographySmall className="text-zinc-800 dark:text-gray-300">
             tem mais {dataCaracteristicas.length - (break_by_index + 1)}.
           </TypographySmall>
         </TypographyListItem>

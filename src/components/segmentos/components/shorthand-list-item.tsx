@@ -9,7 +9,7 @@ function ShorthandListItem({
   caracteristica
 }: TypeShorthandListItemProps) {
   return (
-    <TypographyListItem className="text-sm font-medium leading-none text-zinc-900">
+    <TypographyListItem className="text-sm font-medium leading-none">
       {title} {caracteristica}
     </TypographyListItem>
   )

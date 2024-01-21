@@ -29,7 +29,9 @@ export default function CategoriaDropdownMenuItems({
         >
           <Link
             href={href}
-            className={cn('flex items-center gap-1 font-sans capitalize')}
+            className={cn(
+              'flex items-center gap-1 font-sans capitalize text-zinc-800 dark:text-gray-300'
+            )}
           >
             {content}
             <NavigationIcon width={14} height={14} />
