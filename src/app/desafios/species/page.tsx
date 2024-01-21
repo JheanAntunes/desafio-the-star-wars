@@ -1,8 +1,9 @@
+import MessageSection from '@/components/segmentos/desafios/components/message-section'
 import SpeciesCards from '@/components/segmentos/desafios/species/components/species-cards'
 import SpeciesPagination from '@/components/segmentos/desafios/species/components/species-pagination'
 import { SkeletonCards } from '@/components/ui/skeletons/skeleton-cards'
 import SkeletonPagination from '@/components/ui/skeletons/skeleton-pagination'
-import { TypographyH2, TypographyP } from '@/components/ui/typography'
+import { TypographyH2 } from '@/components/ui/typography'
 import { Suspense } from 'react'
 
 type TypeParamsSearch = {
@@ -19,7 +20,7 @@ function PageSpeciesDesafio({
     <main className="container my-8 flex flex-col gap-8">
       <div className="flex flex-col gap-1">
         <TypographyH2>Desafio de Espécies</TypographyH2>
-        <TypographyP>Clique em algum desafio abaixo para começar.</TypographyP>
+        <MessageSection />
       </div>
       <Suspense fallback={<SkeletonCards />}>
         <SpeciesCards page={page} segmento="desafios" />

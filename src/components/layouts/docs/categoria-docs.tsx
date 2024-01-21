@@ -1,10 +1,10 @@
-import ImgRoboDocs from '@/components/assets/img-robo-png.png'
 import CategoriaActiveLink from '@/components/layouts/desafio/categoria-active-link-by-pathname'
 import {
   CategoriaContainer,
   CategoriaContainerListLinks,
   CategoriaTitle
 } from '@/components/layouts/desafio/categoria-links'
+import ImageRoboTheme from '@/components/segmentos/components/image-robo-theme'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -13,7 +13,6 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { dataLinksDocs } from '@/utils/data-link'
 import { ArrowDown } from 'lucide-react'
-import Image from 'next/image'
 import CategoriaDropdownMenuItems from '../desafio/categoria-desafios-menu-mobile'
 
 function CategoriaDocs() {
@@ -22,13 +21,7 @@ function CategoriaDocs() {
       <CategoriaContainer>
         <div className="flex gap-1">
           <CategoriaTitle>Categorias</CategoriaTitle>
-          <Image
-            src={ImgRoboDocs}
-            alt=""
-            height={40}
-            width={40}
-            className="object-contain"
-          />
+          <ImageRoboTheme />
         </div>
         <div className="md:hidden">
           <DropdownMenu>

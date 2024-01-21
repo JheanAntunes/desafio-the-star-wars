@@ -81,7 +81,10 @@ export function TypographyListItem({
   ...restProps
 }: React.ComponentProps<'li'>) {
   return (
-    <li className={cn('', className)} {...restProps}>
+    <li
+      className={cn('text-zinc-700 dark:text-gray-300', className)}
+      {...restProps}
+    >
       {children}
     </li>
   )
@@ -94,7 +97,10 @@ export function TypographySmall({
 }: React.ComponentProps<'small'>) {
   return (
     <small
-      className={cn('text-sm font-medium leading-none', className)}
+      className={cn(
+        'text-sm font-medium leading-none text-zinc-800 dark:text-gray-300',
+        className
+      )}
       {...restProps}
     >
       {children}

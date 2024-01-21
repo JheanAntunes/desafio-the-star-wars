@@ -1,15 +1,14 @@
-import EspadaLuz from '@/components/assets/espada-luz.png'
-import ImgRoboDocs from '@/components/assets/img-robo-png.png'
 import CardChallenge from '@/components/segmentos/components/card-challenge'
 import CardTitleChallenge from '@/components/segmentos/components/card-title-challenge'
 import CheckedDesafio from '@/components/segmentos/components/checked-desafio'
+import ImageEspadaTheme from '@/components/segmentos/components/image-espada-theme'
+import ImageRoboTheme from '@/components/segmentos/components/image-robo-theme'
 import ShorthandListItem from '@/components/segmentos/components/shorthand-list-item'
 import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import { CardContent, CardHeader } from '@/components/ui/card'
 import { TypographyList } from '@/components/ui/typography'
 import { TypePlanet } from '@/types/Typesfetch'
 import { formatedNumber } from '@/utils/formatedNumber'
-import Image from 'next/image'
 
 type TypePlanetCardProps = TypePlanet & { segmento: TypeSegmento }
 
@@ -39,21 +38,9 @@ const PlanetCard = ({
             {verificatedSegmentoDesafios ? 'Desafio' : name}
           </CardTitleChallenge>
           {verificatedSegmentoDesafios ? (
-            <Image
-              src={EspadaLuz}
-              alt=""
-              height={32}
-              width={32}
-              className="object-contain"
-            />
+            <ImageEspadaTheme />
           ) : (
-            <Image
-              src={ImgRoboDocs}
-              alt=""
-              height={32}
-              width={32}
-              className="object-contain"
-            />
+            <ImageRoboTheme />
           )}
         </div>
       </CardHeader>
