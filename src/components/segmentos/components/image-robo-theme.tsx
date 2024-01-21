@@ -14,7 +14,6 @@ const ImageRoboTheme = ({ width, height }: ImageRoboThemeProps) => {
         width={width ?? 32}
         height={height ?? 32}
         className="object-contain dark:hidden"
-        unoptimized
       />
       <Image
         src={ImgRoboLight}

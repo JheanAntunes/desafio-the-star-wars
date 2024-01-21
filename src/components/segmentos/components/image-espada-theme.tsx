@@ -10,7 +10,6 @@ const ImageEspadaTheme = () => {
         width={32}
         height={32}
         className="object-contain dark:hidden"
-        unoptimized
       />
       <Image
         src={EspadaLight}

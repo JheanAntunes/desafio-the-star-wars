@@ -16,7 +16,6 @@ const ImageStarshipsTheme = ({ width, height }: ImageStarshipsThemeProps) => {
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
-        unoptimized
       />
       <Image
         src={ImgStarshipsLight}
@@ -24,7 +23,6 @@ const ImageStarshipsTheme = ({ width, height }: ImageStarshipsThemeProps) => {
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"
-        unoptimized
       />
     </>
   )

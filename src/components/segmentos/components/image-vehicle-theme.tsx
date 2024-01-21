@@ -16,7 +16,6 @@ const ImageVehicleTheme = ({ width, height }: ImageVehicleThemeProps) => {
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
-        unoptimized
       />
       <Image
         src={ImgVehicleLight}
@@ -24,7 +23,6 @@ const ImageVehicleTheme = ({ width, height }: ImageVehicleThemeProps) => {
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"
-        unoptimized
       />
     </>
   )
