@@ -1,5 +1,5 @@
-import ImgDarthVaderLight from '@/components/assets/darth-vader-dark.svg'
-import ImgDarthVaderDark from '@/components/assets/darth-vader-light.svg'
+import ImgDarthVaderDark from '@/components/assets/darth-vader-dark.svg'
+import ImgDarthVaderLight from '@/components/assets/darth-vader-light.svg'
 import Image from 'next/image'
 const ImageDarthVaderTheme = () => {
   return (
