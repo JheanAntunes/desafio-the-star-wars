@@ -1,4 +1,6 @@
+import ImageFilmTheme from '@/components/segmentos/components/image-film-theme'
 import ImagePeopleTheme from '@/components/segmentos/components/image-people-theme'
+import ImagePlanetTheme from '@/components/segmentos/components/image-planet-theme'
 import ImageSpeciesTheme from '@/components/segmentos/components/image-species-theme'
 import ImageStarshipsTheme from '@/components/segmentos/components/image-starships-theme'
 import ImageVehicleTheme from '@/components/segmentos/components/image-vehicle-theme'
@@ -6,7 +8,7 @@ import ImageVehicleTheme from '@/components/segmentos/components/image-vehicle-t
 export type TypeDataLinks = {
   href: string
   content: string
-  icon?: React.ReactNode
+  icon: React.ReactNode
 }
 
 export const dataLinksDesafios: TypeDataLinks[] = [
@@ -17,11 +19,13 @@ export const dataLinksDesafios: TypeDataLinks[] = [
   },
   {
     href: '/desafios/planets',
-    content: 'Planetas'
+    content: 'Planetas',
+    icon: <ImagePlanetTheme />
   },
   {
     href: '/desafios/films',
-    content: 'Filmes'
+    content: 'Filmes',
+    icon: <ImageFilmTheme />
   },
   {
     href: '/desafios/starships',
@@ -43,26 +47,32 @@ export const dataLinksDesafios: TypeDataLinks[] = [
 export const dataLinksDocs: TypeDataLinks[] = [
   {
     href: '/docs/person',
-    content: 'Pessoas'
+    content: 'Pessoas',
+    icon: <ImagePeopleTheme />
   },
   {
     href: '/docs/planets',
-    content: 'Planetas'
+    content: 'Planetas',
+    icon: <ImagePlanetTheme />
   },
   {
     href: '/docs/films',
-    content: 'Filmes'
+    content: 'Filmes',
+    icon: <ImageFilmTheme />
   },
   {
     href: '/docs/starships',
-    content: 'Nave Estelares'
+    content: 'Nave Estelares',
+    icon: <ImageStarshipsTheme />
   },
   {
     href: '/docs/vehicles',
-    content: 'Veículos'
+    content: 'Veículos',
+    icon: <ImageVehicleTheme />
   },
   {
     href: '/docs/species',
-    content: 'Espécies'
+    content: 'Espécies',
+    icon: <ImageSpeciesTheme />
   }
 ]
