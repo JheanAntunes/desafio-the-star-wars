@@ -12,7 +12,7 @@ const ImageSpeciesTheme = ({ width, height }: ImageSpeciesThemeProps) => {
     <>
       <Image
         src={ImgSpeciesDark}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
@@ -20,7 +20,7 @@ const ImageSpeciesTheme = ({ width, height }: ImageSpeciesThemeProps) => {
       />
       <Image
         src={ImgSpeciesLight}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"

@@ -12,7 +12,7 @@ const ImagePeopleTheme = ({ width, height }: ImagePeopleThemeProps) => {
     <>
       <Image
         src={ImgPeopleDark}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
@@ -20,7 +20,7 @@ const ImagePeopleTheme = ({ width, height }: ImagePeopleThemeProps) => {
       />
       <Image
         src={ImgPeopleLight}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"

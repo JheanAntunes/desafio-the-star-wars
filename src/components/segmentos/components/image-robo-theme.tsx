@@ -10,14 +10,14 @@ const ImageRoboTheme = ({ width, height }: ImageRoboThemeProps) => {
     <>
       <Image
         src={ImgRobo}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? 32}
         height={height ?? 32}
         className="object-contain dark:hidden"
       />
       <Image
         src={ImgRoboLight}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? 32}
         height={height ?? 32}
         className="hidden object-contain dark:block"

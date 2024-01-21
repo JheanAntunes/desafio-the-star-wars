@@ -12,14 +12,14 @@ const ImageFilmTheme = ({ width, height }: ImageFilmThemeProps) => {
     <>
       <Image
         src={ImgFilmDark}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
       />
       <Image
         src={ImgFilmLight}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"

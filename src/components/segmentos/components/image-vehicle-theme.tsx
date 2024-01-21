@@ -12,14 +12,14 @@ const ImageVehicleTheme = ({ width, height }: ImageVehicleThemeProps) => {
     <>
       <Image
         src={ImgVehicleDark}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="object-contain dark:hidden"
       />
       <Image
         src={ImgVehicleLight}
-        alt="Imagem que representa o link da página documentação"
+        alt=""
         width={width ?? heightWidth}
         height={height ?? heightWidth}
         className="hidden object-contain dark:block"
