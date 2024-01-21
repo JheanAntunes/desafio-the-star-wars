@@ -7,21 +7,22 @@ type ImagePeopleThemeProps = {
   height?: ImageProps['height']
 }
 const ImagePeopleTheme = ({ width, height }: ImagePeopleThemeProps) => {
+  const heightWidth = 24
   return (
     <>
       <Image
         src={ImgPeopleDark}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="object-contain dark:hidden"
         unoptimized
       />
       <Image
         src={ImgPeopleLight}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="hidden object-contain dark:block"
         unoptimized
       />

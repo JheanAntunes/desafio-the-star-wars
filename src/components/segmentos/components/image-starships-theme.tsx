@@ -7,21 +7,22 @@ type ImageStarshipsThemeProps = {
   height?: ImageProps['height']
 }
 const ImageStarshipsTheme = ({ width, height }: ImageStarshipsThemeProps) => {
+  const heightWidth = 24
   return (
     <>
       <Image
         src={ImgStarshipsDark}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="object-contain dark:hidden"
         unoptimized
       />
       <Image
         src={ImgStarshipsLight}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="hidden object-contain dark:block"
         unoptimized
       />

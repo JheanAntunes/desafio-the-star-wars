@@ -7,21 +7,22 @@ type ImageVehicleThemeProps = {
   height?: ImageProps['height']
 }
 const ImageVehicleTheme = ({ width, height }: ImageVehicleThemeProps) => {
+  const heightWidth = 24
   return (
     <>
       <Image
         src={ImgVehicleDark}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="object-contain dark:hidden"
         unoptimized
       />
       <Image
         src={ImgVehicleLight}
         alt="Imagem que representa o link da página documentação"
-        width={width ?? 32}
-        height={height ?? 32}
+        width={width ?? heightWidth}
+        height={height ?? heightWidth}
         className="hidden object-contain dark:block"
         unoptimized
       />
