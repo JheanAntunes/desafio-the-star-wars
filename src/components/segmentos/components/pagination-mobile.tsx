@@ -5,18 +5,18 @@ import { PaginationLink } from '@/components/ui/pagination'
 import { RotasCategorias } from '@/types/rotasCategorias'
 import { Fragment } from 'react'
 
-type PersonPaginationMobileProps = {
+type PaginationMobileProps = {
   segmento: TypeSegmento
   segmentoCategoria: RotasCategorias
   pagination: number[]
   currentPage: number
 }
-const PersonPaginationMobile = ({
+const PaginationMobile = ({
   pagination,
   currentPage,
   segmento,
   segmentoCategoria
-}: PersonPaginationMobileProps) => {
+}: PaginationMobileProps) => {
   const paginationSlice = pagination.slice(0, 3)
   const paginationEllipsis = pagination.slice(paginationSlice.length)
   const indexPaginationEllipsis = paginationSlice.length
@@ -52,4 +52,4 @@ const PersonPaginationMobile = ({
   )
 }
 
-export default PersonPaginationMobile
+export default PaginationMobile
