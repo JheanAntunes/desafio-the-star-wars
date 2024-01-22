@@ -2,14 +2,14 @@ import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import {
   Pagination,
   PaginationContent,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious
 } from '@/components/ui/pagination'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import PaginationLogic from '@/utils/pagination-logic'
-import { Fragment } from 'react'
+import PaginationLinks from '../../../components/pagination-links'
+import PersonPaginationMobile from '../../../components/pagination-mobile'
 
 type TypePersonPagination = {
   page?: string
@@ -38,16 +38,22 @@ const PersonPagination = async (props: TypePersonPagination) => {
               href={`/${segmento}/person/?page=${currentPage - 1}`}
             />
           )}
-          {pagination.map((index) => (
-            <Fragment key={index}>
-              <PaginationLink
-                href={`/${segmento}/person/?page=${index + 1}`}
-                isActive={currentPage === index + 1}
-              >
-                {index + 1}
-              </PaginationLink>
-            </Fragment>
-          ))}
+          <div className="hidden md:flex">
+            <PaginationLinks
+              currentPage={currentPage}
+              pagination={pagination}
+              segmento={segmento}
+              segmentoCategoria="person"
+            />
+          </div>
+          <div className="flex md:hidden">
+            <PersonPaginationMobile
+              currentPage={currentPage}
+              pagination={pagination}
+              segmento={segmento}
+              segmentoCategoria="person"
+            />
+          </div>
           {next && (
             <PaginationNext
               href={`/${segmento}/person/?page=${currentPage + 1}`}
