@@ -14,8 +14,8 @@ function ShorthandCarousel({ children }: React.PropsWithChildren) {
       className="w-full max-w-xs md:max-w-3xl lg:max-w-5xl"
     >
       <CarouselContent className="-ml-8">{children}</CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="-left-4 sm:-left-12" />
+      <CarouselNext className="-right-4 sm:-right-12" />
     </Carousel>
   )
 }
