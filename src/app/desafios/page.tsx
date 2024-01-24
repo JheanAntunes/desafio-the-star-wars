@@ -7,7 +7,7 @@ import SectionDesafioVehicles from '@/components/segmentos/desafios/components/s
 
 function PageDesafio() {
   return (
-    <main className="mt-8 flex flex-col gap-8">
+    <main className="my-8 flex flex-col gap-8">
       <SectionDesafioPerson />
       <SectionDesafioPlanet />
       <SectionDesafioFilms />

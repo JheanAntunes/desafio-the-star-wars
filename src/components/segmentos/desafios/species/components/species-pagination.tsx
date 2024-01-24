@@ -1,15 +1,15 @@
+import PaginationLinks from '@/components/segmentos/components/pagination-links'
+import PaginationMobile from '@/components/segmentos/components/pagination-mobile'
 import { TypeSegmento } from '@/components/segmentos/types/segmento'
 import {
   Pagination,
   PaginationContent,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious
 } from '@/components/ui/pagination'
 import { TypeFetch, TypeSpecies } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
 import PaginationLogic from '@/utils/pagination-logic'
-import { Fragment } from 'react'
 
 type TypeSpeciesPagination = {
   page?: string
@@ -38,16 +38,22 @@ const SpeciesPagination = async (props: TypeSpeciesPagination) => {
               href={`/${segmento}/species/?page=${currentPage - 1}`}
             />
           )}
-          {pagination.map((index) => (
-            <Fragment key={index}>
-              <PaginationLink
-                href={`/${segmento}/species/?page=${index + 1}`}
-                isActive={currentPage === index + 1}
-              >
-                {index + 1}
-              </PaginationLink>
-            </Fragment>
-          ))}
+          <div className="hidden md:flex">
+            <PaginationLinks
+              currentPage={currentPage}
+              pagination={pagination}
+              segmento={segmento}
+              segmentoCategoria="species"
+            />
+          </div>
+          <div className="flex md:hidden">
+            <PaginationMobile
+              currentPage={currentPage}
+              pagination={pagination}
+              segmento={segmento}
+              segmentoCategoria="species"
+            />
+          </div>
           {next && (
             <PaginationNext
               href={`/${segmento}/species/?page=${currentPage + 1}`}

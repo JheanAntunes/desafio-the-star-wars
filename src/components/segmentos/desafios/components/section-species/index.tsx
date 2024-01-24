@@ -1,5 +1,5 @@
 import { SkeletonCards } from '@/components/ui/skeletons/skeleton-cards'
-import { TypographyH2 } from '@/components/ui/typography'
+import { TypographyH3 } from '@/components/ui/typography'
 import { Suspense } from 'react'
 import SectionSpeciesDesafioCarousel from '../../../components/species-carousel'
 import MessageSection from '../message-section'
@@ -8,7 +8,7 @@ function SectionDesafioSpecies() {
   return (
     <section className="container flex flex-col gap-5">
       <div>
-        <TypographyH2>Espécies</TypographyH2>
+        <TypographyH3>Espécies</TypographyH3>
         <MessageSection />
       </div>
       <div className="flex items-center justify-center">
