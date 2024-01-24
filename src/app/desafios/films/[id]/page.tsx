@@ -4,6 +4,23 @@ import { Skeleton } from '@/components/ui/skeleton'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { Suspense } from 'react'
 
+export const metadata = {
+  title: { absolute: 'Desafio de Filme' },
+  description: 'Página de desafio da categoria filme.',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Next.js',
+    'server components',
+    'client components',
+    'React',
+    'JavaScript',
+    'shadcn-ui'
+  ],
+  authors: [{ name: 'Jhean' }],
+  creator: 'Jhean',
+  publisher: 'Jhean'
+}
+
 type TypeURLParams = {
   id: string
 }
