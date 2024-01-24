@@ -4,28 +4,28 @@ import SkeletonList from './skeleton-list'
 export function SkeletonCards() {
   return (
     <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>{' '}
-      <Skeleton className="h-80 w-full rounded p-5">
-        <Skeleton className="h-7 w-full" />
+      <Skeleton className="h-80 w-80 rounded p-5">
+        <Skeleton className="h-7 w-80" />
         <SkeletonList />
       </Skeleton>
     </div>
