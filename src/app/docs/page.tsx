@@ -5,6 +5,23 @@ import SectionDocsSpecies from '@/components/segmentos/docs/components/section-d
 import SectionDocsStarships from '@/components/segmentos/docs/components/section-docs-starships'
 import SectionDocsVehicles from '@/components/segmentos/docs/components/section-docs-vehicles'
 
+export const metadata = {
+  title: 'Documentação',
+  description:
+    'Página de documentação com várias categorias que você pode escolher.',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Next.js',
+    'server components',
+    'React',
+    'JavaScript',
+    'shadcn-ui'
+  ],
+  authors: [{ name: 'Jhean' }],
+  creator: 'Jhean',
+  publisher: 'Jhean'
+}
+
 function PageDocs() {
   return (
     <main className="my-8 flex flex-col gap-8">

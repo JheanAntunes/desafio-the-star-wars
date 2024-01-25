@@ -6,6 +6,22 @@ import SkeletonPagination from '@/components/ui/skeletons/skeleton-pagination'
 import { TypographyH2 } from '@/components/ui/typography'
 import { Suspense } from 'react'
 
+export const metadata = {
+  title: 'Planetas',
+  description: 'Página de desafios da categoria planetas.',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'Next.js',
+    'server components',
+    'React',
+    'JavaScript',
+    'shadcn-ui'
+  ],
+  authors: [{ name: 'Jhean' }],
+  creator: 'Jhean',
+  publisher: 'Jhean'
+}
+
 type TypeParamsSearch = {
   page?: string
 }
