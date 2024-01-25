@@ -1,10 +1,10 @@
 import PersonDescription from '@/components/segmentos/components/person-description'
-import { hasNext } from '@/components/segmentos/utils/has-next'
+import NotFoundData from '@/components/segmentos/utils/not-found-data'
 import SkeletonDescription from '@/components/ui/skeletons/skeleton-description'
 import { TypographyH1 } from '@/components/ui/typography'
 import { TypeFetch, TypePerson } from '@/types/Typesfetch'
 import { BASE_URL_API, fetchGet } from '@/utils/fetch'
-import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import { Suspense } from 'react'
 
 type TypeParams = {
@@ -15,22 +15,54 @@ type TypesearchParams = {
   page?: string
 }
 
-type PageDinamicaPersonDocsProps = {
+type Props = {
   params: TypeParams
-  searchParams: TypesearchParams
+  searchParams: {
+    [key: string]: string | string[] | undefined
+  } & TypesearchParams
 }
 
-const PageDinamicaPersonDocs = async ({
+export async function generateMetadata({
   params,
   searchParams
-}: PageDinamicaPersonDocsProps) => {
+}: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id
+  const page = searchParams.page ?? '1'
+  // fetch data
+  const { results } = await fetchGet<TypeFetch<TypePerson>>(
+    `${BASE_URL_API}/people/?page=${page}&format=json`
+  )
+  //not found
+  NotFoundData(Number(id), results.length)
+
+  const { name } = results[Number(id)]
+  return {
+    title: name,
+    description: `A documentação da pessoa ${name}`,
+    referrer: 'origin-when-cross-origin',
+    keywords: [
+      'Next.js',
+      'server components',
+      'React',
+      'JavaScript',
+      'shadcn-ui'
+    ],
+    authors: [{ name: 'Jhean' }],
+    creator: 'Jhean',
+    publisher: 'Jhean'
+  }
+}
+
+const PageDinamicaPersonDocs = async ({ params, searchParams }: Props) => {
   const { id } = params
   const { page } = searchParams
   const { results } = await fetchGet<TypeFetch<TypePerson>>(
     `${BASE_URL_API}/people/?page=${page ?? 1}&format=json`
   )
-  //verificando se o id(index) é menor que a quantidade do array result
-  if (!hasNext(Number(id), results.length)) notFound()
+  //not found
+  NotFoundData(Number(id), results.length)
+
   const { name } = results[Number(id)]
 
   return (
