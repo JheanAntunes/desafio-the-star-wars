@@ -56,11 +56,11 @@ O que pratiquei para fazer esse projeto 🥇
 > com tailwindcss
 - Component Image
 > utilizei svg também, mas não é otimizado.
-- Component Link
+- Link
 - metadata
 ### Busca de dados 🌟
 - data fetching components server
-### Functions
+### Functions 🌟
 - fetch
 - generateMetadata
 - Ganchos ⚓
@@ -72,6 +72,51 @@ Tem mais recursos de nextjs que pratiquei como pattern, utilizar client-side em 
 
 exemplo: Component Link com uma estilização extra para informar qual rota está, para construir esse component precisa descobrir qual rota o usuario está, tem o gacho usePathname que me retorna a rota que o usuário está atualmente, mas tem o problema que esse gancho funciona somente em component client, então, o que farei ? transformar o component em client-side que vai utilizar esse link ou construir um component Link client com a lógica e utilizar no component que necessita do link ?
 resposta: criar o component Link com a diretiva "use client" e utilizar em component server 🏁
+
+### [![My Skills Nextjs](https://skillicons.dev/icons?i=tailwindcss)](https://skillicons.dev)
+- classes customizadas
+- tailwind [Merge](https://github.com/dcastil/tailwind-merge)
+- tailwind [Class Variance Authority](https://cva.style/docs)
+- tailwind [Clsx](https://www.npmjs.com/package/clsx)
+- function cn (a junção de clsx com merge)
+> resolver conflito de classes e classes condicionais.
+
+### Shadcn-ui 🌟
+repositório de componentes fantástico, [Shadcn-iu](https://ui.shadcn.com/docs/components/accordion)
+> Esta NÃO é uma biblioteca de componentes. É uma coleção de componentes reutilizáveis ​​que você pode copiar e colar em seus aplicativos.
+lista de components que copiei ⬇️ 
+- Tema 🌞/ 🌚
+  - next themes
+- Base-color: zinc
+- Button
+- Carousel
+- Pagination
+- Card
+- Form
+  - zod
+  - react/hook/form
+  - react/hook/resolvers
+- Dropdown-Menu
+- Toast
+- Input
+- Label
+- Skeleton
+- Separator
+- Badge
+- Mode-toggle (botão de alternar tema)
+
+### [![My Skills Nextjs](https://skillicons.dev/icons?i=react)](https://skillicons.dev)
+> Uma lista destacada de conceitos que pratiquei ⬇️
+- context
+- custom hooks
+- Reaproveitamento
+- Composição
+
+### [![My Skills Nextjs](https://skillicons.dev/icons?i=typescript)](https://skillicons.dev)
+> Uma lista destacada de conceitos que pratiquei ⬇️
+- indexação de tipo
+- generics
+  - restrição de generics
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
