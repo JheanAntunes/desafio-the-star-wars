@@ -73,11 +73,14 @@ Tem mais recursos de nextjs que pratiquei como pattern, utilizar client-side em 
 exemplo: Component Link com uma estilização extra para informar qual rota está, para construir esse component precisa descobrir qual rota o usuario está, tem o gacho usePathname que me retorna a rota que o usuário está atualmente, mas tem o problema que esse gancho funciona somente em component client, então, o que farei ? transformar o component em client-side que vai utilizar esse link ou construir um component Link client com a lógica e utilizar no component que necessita do link ?
 resposta: criar o component Link com a diretiva "use client" e utilizar em component server 🏁
 
-### [![My Skills Nextjs](https://skillicons.dev/icons?i=tailwindcss)](https://skillicons.dev)
+### [![My Skills tailwindcss](https://skillicons.dev/icons?i=tailwindcss)](https://skillicons.dev)
 - classes customizadas
 - tailwind [Merge](https://github.com/dcastil/tailwind-merge)
 - tailwind [Class Variance Authority](https://cva.style/docs)
 - tailwind [Clsx](https://www.npmjs.com/package/clsx)
+- tailwind @utilities
+- tailwind @layer
+- tailwind @aplly
 - function cn (a junção de clsx com merge)
 > resolver conflito de classes e classes condicionais.
 
@@ -105,7 +108,7 @@ lista de components que copiei ⬇️
 - Badge
 - Mode-toggle (botão de alternar tema)
 
-### [![My Skills Nextjs](https://skillicons.dev/icons?i=react)](https://skillicons.dev)
+### [![My Skills react](https://skillicons.dev/icons?i=react)](https://skillicons.dev)
 > Uma lista destacada de conceitos que pratiquei ⬇️
 - context
 - custom hooks
@@ -118,6 +121,12 @@ lista de components que copiei ⬇️
 - generics
   - restrição de generics
 
+### [![My Skills git](https://skillicons.dev/icons?i=git,github)](https://skillicons.dev)
+[repositório de padrão de commits](https://github.com/iuricode/padroes-de-commits)
+- padrão de commits
+
+### Contribuições 🌟
+[Icones de Star Wars](https://icons8.com.br/icons/set/star-wars)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
