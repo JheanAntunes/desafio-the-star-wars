@@ -1,3 +1,41 @@
+# Star Wars :mage:	
+Site para conhecer mais a obra _Star Wars_ com desafios e documentação.
+
+## Categoria de desafios ou documentação :star2:
+- Pessoa :bearded_person:
+- Espécie :monkey_face:
+- Planeta 🪐
+- Filme 📽️
+- Nave estelar :flying_saucer:
+- Veículo 🚙
+
+# Recursos
+[![My Skills](https://skillicons.dev/icons?i=js,typescript,html,css,react,nextjs,tailwindcss,git,github)](https://skillicons.dev)
+- [Zod](https://zod.dev/) :star2:
+- [ReactHookForm](https://react-hook-form.com/) :star2:
+  - [hookFormResolver](https://www.npmjs.com/package/@hookform/resolvers) :star2:
+- [Shadcn-ui](https://ui.shadcn.com/) :star2:
+
+## Pratica :star2:
+O que pratiquei para fazer esse projeto 🥇
+
+### [![My Skills Nextjs](https://skillicons.dev/icons?i=nextjs)](https://skillicons.dev)
+
+- middleware
+
+> "O middleware é executado antes que o conteúdo e as rotas armazenados em cache sejam correspondidos"
+
+> Utilizei o _middleware_, para redirecionar o usuário para segmento de rota desafios, porque não tem a página home.
+
+### Roteamento App Router :star2:
+- Definir rotas
+- Páginas e layouts
+  - layout Raiz
+> layout raiz: header, toaster, estrelas de fundo que é compartilhado com as todas páginas do projeto.  
+  - sub-layout (layout aninhado)
+> layout aninhado: um layout para o segmento e segmentos filhos, exemplo: o layout do segmento de rota desafios tem um title "Desafio Star wars" que é compartilhado com todas as páginas que estão aninhadas a essa rota.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
