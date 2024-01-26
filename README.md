@@ -1,6 +1,9 @@
 # Star Wars :mage:	
 Site para conhecer mais a obra _Star Wars_ com desafios e documentação.
 
+desafio 01 de pessoa: Luke Skywalker
+> Para ver detalhes mais do projeto como a troca de UI quando o desafio é completado, o feedback quando o desafio está completado na página de categoria de pessoa e na pagina de documentação e mais...
+
 ## Categoria de desafios ou documentação :star2:
 - Pessoa :bearded_person:
 - Espécie :monkey_face:
@@ -17,7 +20,7 @@ Site para conhecer mais a obra _Star Wars_ com desafios e documentação.
 - [Shadcn-ui](https://ui.shadcn.com/) :star2:
 - [Prettier](https://prettier.io/) 💅
 - [Eslint](https://eslint.org/) :hammer_and_wrench:
-
+- API [Swapi](https://swapi.dev/documentation)
 ## Pratica :star2:
 O que pratiquei para fazer esse projeto 🥇
 
@@ -124,6 +127,33 @@ lista de components que copiei ⬇️
 ### [![My Skills git](https://skillicons.dev/icons?i=git,github)](https://skillicons.dev)
 [repositório de padrão de commits](https://github.com/iuricode/padroes-de-commits)
 - padrão de commits
+
+### LocalStorage 🌟
+function: logicLocalStorageDataChallenger
+localstorage como banco de dados para armazenar os desafios completados.
+exemplo: {categoriaFilme, categoriaPessoa}
+
+# Dificuldades 🌟
+## Dados retornado da api 
+eu precisei criar funções para formatar os dados retornados, porque tem propriedades com valor "unknow", "none", "n/a" ou array vazio []
+### Dados retornados da api sem id :eyes:
+A forma que encontrei para resolver esse problema em rotas dinâmicas foi enviando o index como id e o parametro de pesquisa page para fazer o mesmo fetch na página dinãmica e utiliza o id como index no array de dado que é retornado.
+## Paginação na página de categoria
+lógica: PaginationLogic
+
+> gerenciamento é feito pela url, as vantagens que tenho é o compartilhamento, renderização no servidor...
+
+Eu utilizei o component Pagination do shadcn-ui para construir a páginação, porém precisava fazer a lógica de paginação e essa lógica precisa ser reutilizada em outras página de categoria, consegui fazer a lógica e a reutilização, porém outro problema apareceu que é a versão mobile, precisei fazer a lógica de paginação ellipsis e consegui fazer.
+## Trocar a UI quando o desafio é completado
+eu pensei em duas formas, a primeira é utilizar context, a segunda é utilizando o gerenciamento pela url.
+então, o que fiz ???
+A página dinâmica de pessoa utiliza o context api para trocar a UI quando o desafio está completado, as outras páginas dinãmicas de categorias o gerenciamento da troca da UI é feita pela URL.
+Por que vc fez das duas que pensou ???
+para descobrir qual é a melhor maneira, e a melhor é pela url porque não preciso utilizar client-side na UI de desafio completado.
+
+## A descrição
+lógica: promiseAllFormatedDataDescriptionSubList
+Os dados retornados para melhorar a descrição são urls que preciso fazer requisições, então criei uma função com promisse all que solicita os dados dessas urls e quando estiverem me retorna, porém essa função precisa ser reutilizada para outras categorias, criei generics, params para a função tornar reutilizada.
 
 ### Contribuições 🌟
 [Icones de Star Wars](https://icons8.com.br/icons/set/star-wars)
